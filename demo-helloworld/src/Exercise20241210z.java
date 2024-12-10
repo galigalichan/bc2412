@@ -37,5 +37,12 @@ public class Exercise20241210z {
         int remainder = dividend % divider;
         System.out.println("The remainder is: " + remainder);
 
+        byte minByte = -128;
+        minByte = (byte) (minByte -1);
+        System.out.println(minByte);
+        byte minByte2 = -128 + 1;
+
+
+
     }
 }

@@ -23,7 +23,7 @@ public class Exercise20241210 {
         // Step 1: byte value + int value => int value
         // Step 4: can we assign int value to byte variable? (downcasting)
 
-        System.out.println(maxByte); // -125, overflow
+        System.out.println(maxByte); // 125, overflow
 
         int x = maxByte; // Java:: is it safe? it is safe
 
