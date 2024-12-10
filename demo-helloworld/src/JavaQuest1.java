@@ -31,7 +31,7 @@ public class JavaQuest1 {
 
     int a = 7;
     int b = 3;
-    int reminder = a - b - b;
+    int reminder = a % b;
     System.out.println("The variable reminder is " + reminder);
 
     int e = 7;
