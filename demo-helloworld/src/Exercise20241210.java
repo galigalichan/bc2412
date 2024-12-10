@@ -37,10 +37,10 @@ public class Exercise20241210 {
         byte b = 127;
         short s = 32767;
         int i = 2147483647;
-        byte maxByte = 126 + 1;
-        System.out.println(maxByte);
-        byte maxByte2 = 126 + 2;
+        byte maxByte2 = 126 + 1;
         System.out.println(maxByte2);
-        short max
+        // byte maxByte3 = 126 + 2;
+        // System.out.println(maxByte3);
+    
     }
 }
