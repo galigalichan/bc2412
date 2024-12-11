@@ -27,6 +27,11 @@ public class DemoString {
         System.out.println(password.charAt(8)); // !
         // System.out.println(password.charAt(-1)); // error
         // System.out.println(password.charAt(9)); // error
+
+        // Problem: print the last character of string
+        String password2 = "helloworld";
+        char lastChar = password2.charAt(password2.length() -1);
+        System.out.println(lastChar); // d
         
         // equals() -> true
         String s1 = "abc";
@@ -44,9 +49,19 @@ public class DemoString {
         int result4 = password.length();
         System.out.println(result4); // 9, the length of String value
 
-        
+        // Empty Spring
+        String emptyString = "";
+        System.out.println(emptyString.length()); // 0
+        boolean isStringEmpty = "".equals(emptyString); // asking if emptySpring equals to ""
+        System.out.println(isStringEmpty); // true
 
+        String s = "hello";
+        System.out.println("hello".equals(s)); // asking if s equals to "hello": Spring.equals
 
+        System.out.println("hello".charAt(2)); // l
+        System.out.println("hello".length()); // 5
+
+        // 'c'.charAt() // Primitive has no method (tool)
 
         }
     }
