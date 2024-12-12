@@ -58,10 +58,18 @@ public class DemoString {
         String s = "hello";
         System.out.println("hello".equals(s)); // asking if s equals to "hello": Spring.equals
 
-        System.out.println("hello".charAt(2)); // l
+        System.out.println("hello".charAt(2)); // 1
         System.out.println("hello".length()); // 5
 
         // 'c'.charAt() // Primitive has no method (tool)
+
+        // isEmpty
+        String s5 = "abc";
+        // Check if s5 is empty
+        boolean isEmpty = s5.length() == 0;
+        System.out.println(isEmpty); // false
+        System.out.println(s5.isEmpty()); // false
+
 
         }
     }
