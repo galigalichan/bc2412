@@ -6,7 +6,9 @@ public class DemoString2 {
 
         String password2 = "sdBdjFf835435Zd34";
         char lastChar2 = password2.charAt(password2.length() -1);
+        System.out.println(password2.length());
         System.out.println(lastChar2);
+        
 
     
 

@@ -58,17 +58,67 @@ public class DemoForLoop {
             // System.out.println(i); // ! i is declared within the for loop
 
         // sum up all odd numbers between 0 - 10
-        int sum2 = 0;
+        // sum up all even numbers between 0 - 10
+        // ! Find the difference between evenSum and oddSum -> positive number 
+        int oddSum = 0;
+        int evenSum = 0;
         for (int i = 0; i <= 10; i++) {
-            if (i % 2 == 1) {
-                sum2 = sum2 + i;
+            if (i % 2 == 1)
+                oddSum += i;
+            else
+                evenSum += i;
             }
-            }
-                System.out.println(sum2);
-
         
+        // int diff = -1;
+        // if (oddsum > evensum) {
+        //    diff = oddsum - evensum;
+        // } else {
+        //    diff = evensum - oddsum;
+        //}
+            int diff = oddSum > evenSum ? oddSum - evenSum : evenSum - oddSum;
+            System.out.println(diff); // 5
+
+        // Searching
+        String str = "abcdefijk";
+
+        // 1. Check if 'd' exists in the string.
+        // for loop + if + charAt
+        boolean found = false; //assume 'd' cannot be found
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == 'd') {
+                found = true;
+                break; // break the nearest loop
+            }
+        }
+            System.out.println(found);
+        
+        
+        // Test case:
+        // 1. "abcdefijk"
+        // 2. "abcefijk"
+        // 3. ""
+        // 4. "abcdefijkd"
+
+        // 2. Check if the string value contains given substring
+        String substr = "loq";
+        String str2 = "hello";
+        // hel vs loq
+        // ell vs loq
+        // llo vs loq
+        // lo  vs loq
+
+        // for loop + substring
+        boolean isSubstringExist = false;
+        for (int i = 0; i < str2.length() - substr.length() + 1; i++) {
+            if(str2.substring(i, i + substr.length()).equals(substr) ) { // String equals string
+                isSubstringExist = true;
+                break;
+            }
+        }
+        System.out.println(isSubstringExist); // true
+
+
     }
 }
-
 
     
