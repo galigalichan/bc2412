@@ -118,17 +118,78 @@ public class DemoForLoop {
         System.out.println(isSubstringExist); // true
 
         // Counting
-        int sumOfL = 0;
+        int count = 0;
         String s = "hello";
         // Count the number of 'l'
         // for + if
-        for (int i = 0; i <s.length(); i++) {
+        for (int i = 0; i <s.length(); i++) { // length() in case of empty string; loop all values + filtering
             if (s.charAt(i) == 'l') {
-                sumOfL += 1;
+                count++; // break does not apply here because you have to check till the last character
             }
         }
-        System.out.println(sumOfL);
+        System.out.println(count); // 2
 
+        // continue - skip the rest, go to next iteration
+        count = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) != 'l') {
+                continue; // skip count++, go to i++
+            }
+            count++;
+        }
+        System.out.println(count); // 2
+
+        // 1 - 100, print all numbers which can be divided by 3 and 4
+        // must use continue
+        for (int i = 0; i <= 100; i++) {
+            if (i % 3 == 0 && i % 4 != 0 // event 1
+            || i % 4 == 0 && i % 3 != 0 // event 2
+            || i % 3 != 0 && i % 4 != 0) // event 3
+            {
+                continue; // skip print
+            }
+            System.out.println(i);
+        }
+
+        // Nested Loop
+        for (int i = 0; i < 3; i++) { // outer loop
+            for (int j = 0; j < 4; j++) { // inner loop
+                // System.out.println("*"); // print and next line
+                System.out.print("*"); // print
+            }
+        }
+        // ! Step 1: i = 0, j = 0, print *
+        // Step 2: i = 0, j = 1, print *
+        // Step 3: i = 0, j = 2, print *
+        // Step 4: i = 0, j = 3, print *
+        // ! Step 5: i = 1, j = 0, print *
+        // Step 6: i = 1, j = 1, print *
+        // Step 7: i = 1, j = 2, print *
+        // Step 8: i = 1, j = 3, print *
+        // ! Step 9: i = 2, j = 0, print *
+        // Step 10: i = 2, j = 1, print *
+        // Step 11: i = 2, j = 2, print *
+        // Step 12: i = 2, j = 3, print *
+
+        //*
+        //**
+        //***
+        //****
+
+        int n = 4;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < i + 1; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        //    *
+        //   ***
+        //  *****
+        // *******
+
+    
 
     }
 }

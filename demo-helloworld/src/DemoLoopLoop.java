@@ -16,6 +16,8 @@ public class DemoLoopLoop {
             }
         }
         System.out.println(isSubstringExist); // true
+        System.out.println(str2.length());
+        System.out.println(substr.length());
 
     }
 }
