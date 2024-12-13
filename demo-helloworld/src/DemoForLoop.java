@@ -4,7 +4,7 @@ public class DemoForLoop {
         int x = 2;
         x = x * 2;
         x *= 2;
-        System.out.println(x);
+        System.out.println(x); // 8
 
         // For Loop
         // ! for ( ; ; ) {
@@ -54,7 +54,7 @@ public class DemoForLoop {
         for (int i = 0; i <= 20; i++) {
             sum = sum + i;
         }
-            System.out.println(sum);
+            System.out.println(sum); // 210
             // System.out.println(i); // ! i is declared within the for loop
 
         // sum up all odd numbers between 0 - 10
@@ -110,12 +110,24 @@ public class DemoForLoop {
         // for loop + substring
         boolean isSubstringExist = false;
         for (int i = 0; i < str2.length() - substr.length() + 1; i++) {
-            if(str2.substring(i, i + substr.length()).equals(substr) ) { // String equals string
+            if (str2.substring(i, i + substr.length()).equals(substr) ) { // String equals string
                 isSubstringExist = true;
                 break;
             }
         }
         System.out.println(isSubstringExist); // true
+
+        // Counting
+        int sumOfL = 0;
+        String s = "hello";
+        // Count the number of 'l'
+        // for + if
+        for (int i = 0; i <s.length(); i++) {
+            if (s.charAt(i) == 'l') {
+                sumOfL += 1;
+            }
+        }
+        System.out.println(sumOfL);
 
 
     }
