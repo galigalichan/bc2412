@@ -12,7 +12,7 @@ public class DemoDataType {
     double y2 = 3.2;
     // double 2w = 10.0; // ! not OK
 
-    // variable Java naming convension
+    // variable Java naming convention
     // caml case: dayOfWeek, y2
 
     // ! x cannot be declared twice
@@ -53,27 +53,27 @@ public class DemoDataType {
 
     // divide
     int x2 = 3 / 2;
-    // Step 1: 3 -> int value,2 -> int value
+    // Step 1: 3 -> int value, 2 -> int value
     // Step 2: int value / int value -> int value
     // Step 3: 3 / 2 -> 1
     // Step 4: assign 1 (int value) to int type variable (OK!)
 
     double x3 = 3 / 2;
-    // Step 1: 3 -> int value,2 -> int value
+    // Step 1: 3 -> int value, 2 -> int value
     // Step 2: int value / int value -> int value
     // Step 3: 3 / 2 -> 1
     // Step 4: assign 1 (int value) to double type variable (convert 1 to 1.0)
     System.out.println(x3); // 1.0
 
     double x4 = 3.0 / 2;
-    // Step 1: 3.0 -> double value,2 -> int value
+    // Step 1: 3.0 -> double value, 2 -> int value
     // Step 2: double value / int value -> double value
     // Step 3: 3.0 / 2 -> 1.5
     // Step 4: assign 1.5 (double value) to double type variable
     System.out.println(x4); // 1.5
 
     // ! int x5 = 3.0 / 2;
-    // Step 1: 3.0 -> double value,2 -> int value
+    // Step 1: 3.0 -> double value, 2 -> int value
     // Step 2: double value / int value -> double value
     // Step 3: 3.0 / 2.0 -> 1.5
     // Step 4: assign 1.5 (double value) to int type variable (downcasting)
@@ -150,7 +150,7 @@ public class DemoDataType {
 
     boolean isSmoker = false;
     int age = 66;
-    boolean isEldery = age > 65; // "age >> 65" -> asking if age > 65 (yes/no question)
+    boolean isEldery = age > 65; // "age > 65" -> asking if age > 65 (yes/no question)
     System.out.println(isEldery); // true
 
     int age2 = 18;
@@ -191,6 +191,7 @@ public class DemoDataType {
     System.out.println(u6); // 20320
 
     // char q7 = 70000; // ! out of the range of char value
+    
     float f11 = 97;
     double d11 = 97;
     // byte -> short -> int -> long -> float -> double

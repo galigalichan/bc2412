@@ -158,6 +158,7 @@ public class DemoForLoop {
                 System.out.print("*"); // print
             }
         }
+        System.out.println();
         // ! Step 1: i = 0, j = 0, print *
         // Step 2: i = 0, j = 1, print *
         // Step 3: i = 0, j = 2, print *
@@ -181,7 +182,7 @@ public class DemoForLoop {
             for (int j = 0; j < i + 1; j++) {
                 System.out.print("*");
             }
-            System.out.println();
+            System.out.println("");
         }
 
         //    *
