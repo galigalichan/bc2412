@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class DemoArray {
     public static void main(String[] args) {
         int x1 = 3;
@@ -68,19 +70,104 @@ public class DemoArray {
         // 98, 99, 97
 
         // Find the max ascii value in the int array
-        int max = 0;
+        int max = Integer.MIN_VALUE;
         for (int i = 0; i < ascii.length; i++) {
-            if (max < ascii[i]) {
+            if (ascii[i] > max) {
             max = ascii[i];}}
-        System.out.println(max);
+
+        // Step 1: i = 0, 98 > MIN_VALUE -> True -> Put 98 to max
+        // Step 2: i = 1, 99 > 98 -> True -> Put 99 to max
+        // Step 3: i = 1, 97 < 99 -> False -> exit
+        System.out.println(max); // 99
 
         // Find the min value in the int array
         int[] arr5 = new int[] {9, -8, -99, 98};
-        int min = 0;
+        int min = Integer.MAX_VALUE; // int max value
         for (int i = 0; i < arr5.length; i++) {
-            if (min > arr5[i]) {
+            if (arr5[i] < min) {
             min = arr5[i];}}
-        System.out.println(min);
 
+        // Step 1: i = 0, 9 < MAX_VALUE -> True -> Put 9 to min
+        // Step 2: i = 1, -8 < 0 -> True -> Put -8 to min
+        // Step 3: i = 2, -99 < -8 -> True -> Put -99 to min
+        // Step 4: i = 3, 98 < -99 -> False -> exit
+        System.out.println(min); // -99
+
+        // sum
+        int[] arr6 = new int[] {9, -8, -99, 98};
+        int sum2 = 0;
+        for (int i = 0; i < arr6.length; i++) {
+            sum2 = sum2 + arr6[i];}
+            System.out.println(sum2);
+
+        // swap
+        int left = 7;
+        int right = 9;
+        int temp = left; // backup left
+        left = right;
+        right = temp;
+        System.out.println(left); // 9
+        System.out.println(right); // 7
+
+        // array
+        int[] arr8 = new int[] {9, -8, 109, 99 ,98};
+        // print 1 (9 + -8)
+        // print 101 (-8 + 109)
+        // ...
+        // print 197 (99 +98)
+        int sum3 = 0;
+        for (int i = 0; i < arr8.length -1; i++) {
+            sum3 = arr8[i] + arr8[i+1];
+            System.out.println(sum3);}
+
+        
+        // array swap
+        int[] arr7 = new int[] {9, -8, 109, 99 ,98};
+        // move max value to the tail
+        // for loop + swap
+        // 9, -8, 109, 99, 98
+        // -8, 9, 109, 99, 98
+        // -8, 9, 99, 109, 98
+        // -8, 9, 99, 98, 109
+        for (int i = 0; i < arr7.length - 1; i++) {
+            if (arr7[i] > arr7[i + 1]) {
+              temp = arr7[i];
+              arr7[i] = arr7[i + 1];
+              arr7[i + 1] = temp;
+            }
+          }
+          System.out.println(Arrays.toString(arr7)); // [x, x, x, x, 109]
+
+        Integer [] arr11 = new Integer [] {9, 6, 4};
+        // Products for all numbers
+        int product = 1;
+        for (int i = 0; i < arr11.length; i++) {
+            product *= arr11[i];
+        }
+            System.out.println(product); // 216
+
+        double [] prices = new double [] {8.2, 6.5, 10.5};
+        int [] quantities = new int [] {9, 8, 3};
+        // 8.2 x 9 + 6.5 x 8 + 10.5 x 3
+        double totalAmount = 0.0;
+        for (int i = 0; i < prices.length; i++) {
+            totalAmount += prices[i] * quantities[i];}
+            System.out.println(totalAmount); // 157.3
+
+        String s = String.valueOf(123);
+        System.out.println(s); // "123"
+        s = String.valueOf(true);
+        System.out.println(s); // "true"
+
+        System.out.println(String.valueOf('A')); // "A"
+
+        Integer i1 = Integer.valueOf("123");
+        System.out.println(i1); // 23
+
+        // Integer i2 = Integer.valueOf("h"); // java.lang.NumberFormatException
+
+        // "hello" -> 'h' 'e' 'l' 'l' 'o'
+        char [] chArr = "hello".toCharArray();
+        System.out.println(chArr);
     }
 }
