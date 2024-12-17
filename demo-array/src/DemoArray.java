@@ -168,6 +168,39 @@ public class DemoArray {
 
         // "hello" -> 'h' 'e' 'l' 'l' 'o'
         char [] chArr = "hello".toCharArray();
-        System.out.println(chArr);
+        // olleh
+        char cTemp;
+        for (int i = 0; i < chArr.length / 2; i++) {
+        // chArr[i] vs chArr[chArr.length-i]
+        cTemp = chArr[i];
+        chArr[i] = chArr[chArr.length -1 - i];
+        chArr[chArr.length -1 -i] = cTemp;
+        }
+        String result = "";
+        for (int i = 0; i < chArr.length; i++)
+        result += chArr[i];
+        System.out.println(result); // olleh
+    
+        // h -> i, e -> f, l -> m, o -> p // encryption
+        // ifmmp
+        chArr = "hello".toCharArray();
+        for (int i = 0; i < chArr.length; i++) {
+            chArr[i] = (char) (chArr[i] + 1);
+            }
+            System.out.println(String.valueOf(chArr)); // "ifmmp", char Array -> String
+        
+        // assume we have small letters ONLY: 26
+        char[] arr12 = new char [] {'p', 'a', 'p', 'b', 'a', 'p'};
+        // more than one loop
+        int count = 0;
+        for (int i = 0; i < arr12.length; i++) {
+            
+        }
+
+
+        System.out.println(maxNumChar); // p
+
+
+
     }
 }
