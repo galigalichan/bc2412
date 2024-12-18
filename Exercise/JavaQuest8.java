@@ -20,7 +20,7 @@ public class JavaQuest8 {
         for (int j = 0; j < nums.length -1; j++)
         if (nums[j] > nums[j+1]) {
                 temp = nums[j];
-                nums[j] = nums[j + 1];
+                nums[j] = nums[j+1];
                 nums[j+1] = temp;
         }}
         int secondMax = nums[nums.length-2];
@@ -30,7 +30,7 @@ public class JavaQuest8 {
         for (int j = 0; j < nums2.length -1; j++)
         if (nums2[j] > nums2[j+1]) {
                 temp = nums2[j];
-                nums2[j] = nums2[j + 1];
+                nums2[j] = nums2[j+1];
                 nums2[j+1] = temp;
         }}
         int secondMax2 = nums2[nums2.length-2];
@@ -40,7 +40,7 @@ public class JavaQuest8 {
         for (int j = 0; j < nums3.length -1; j++)
         if (nums3[j] > nums3[j+1]) {
                 temp = nums3[j];
-                nums3[j] = nums3[j + 1];
+                nums3[j] = nums3[j+1];
                 nums3[j+1] = temp;
         }}
         int secondMax3 = nums3[nums3.length-2];
@@ -50,7 +50,7 @@ public class JavaQuest8 {
         for (int j = 0; j < nums4.length -1; j++)
         if (nums4[j] > nums4[j+1]) {
                 temp = nums4[j];
-                nums4[j] = nums4[j + 1];
+                nums4[j] = nums4[j+1];
                 nums4[j+1] = temp;
         }}
         int secondMax4 = nums4[nums4.length-2];

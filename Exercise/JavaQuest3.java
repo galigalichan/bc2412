@@ -66,5 +66,26 @@ public class JavaQuest3 {
     }
     System.out.println(
         monthOfName + " " + year + " has " + numberOfDaysInMonth + " days");
+
+    // divided by 4
+    switch (month) {
+        // case 1
+        case 2:
+        if ((year % 400 == 0) || (year % 4 == 0 && year % 100 != 0)) {
+            numberOfDaysInMonth = 29;
+        } else {
+            numberOfDaysInMonth = 28;
+        }
+
+    }
+
+
+
+
   }
 }
+
+ 
+
+
+    
