@@ -77,7 +77,7 @@ public class DemoArray {
 
         // Step 1: i = 0, 98 > MIN_VALUE -> True -> Put 98 to max
         // Step 2: i = 1, 99 > 98 -> True -> Put 99 to max
-        // Step 3: i = 1, 97 < 99 -> False -> exit
+        // Step 3: i = 2, 97 < 99 -> False -> exit
         System.out.println(max); // 99
 
         // Find the min value in the int array
@@ -214,14 +214,14 @@ public class DemoArray {
         int[] arr20 = new int[] {20, -20, 90, 50, -40};
         // Sorting without creating a new array
         // Move the max value to tail
-        // Step 1: [X, X, X, X, 90]
-        // Step 2: [X, X, X, 50, 90]
-        // Step 3: [X, X, 20, 50, 90]
-        // Step 4: [X, -20, 20, 50, 90]
-        // Step 5: [-40, -20, 20, 50, 90]
-
-        for (int i = 0; i < arr20.length - 1; i++) { // one loop can only swap one item
-            for (int j = 0; j < arr20.length - 1; j++) {
+        // Step 1: [X, X, X, X, 90] // when i = 0, j = 0, 1, 2, 3
+        // Step 2: [X, X, X, 50, 90] // when i = 1, j = 0, 1, 2
+        // Step 3: [X, X, 20, 50, 90] // when i = 2, j = 0, 1
+        // Step 4: [X, -20, 20, 50, 90] // when i = 3, j = 0
+        // Answer: [-40, -20, 20, 50, 90]
+        // Bubble Sort
+        for (int i = 0; i < arr20.length - 1; i++) { // 0,1,2,3
+            for (int j = 0; j < arr20.length - i - 1; j++) { // i = 0, j = 0,1,2,3 // i = 3, j = 0
             if (arr20[j] > arr20[j + 1]) {
                 temp = arr20[j + 1];
                 arr20[j + 1] = arr20[j];
