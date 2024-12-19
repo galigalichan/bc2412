@@ -41,9 +41,9 @@ public class JavaQuest10 {
         newArr[j] = my_array[j-1];
         } else {
           break;
-        }
+        }}
         if (indexPosition != (my_array.length - 1)) {
         System.out.println("New Array : " + Arrays.toString(newArr));}
-    }
+    
   }
 }

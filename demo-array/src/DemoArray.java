@@ -183,7 +183,7 @@ public class DemoArray {
     
         // h -> i, e -> f, l -> m, o -> p // encryption
         // ifmmp
-        chArr = "hello".toCharArray();
+        chArr = "hello".toCharArray(); // for swap
         for (int i = 0; i < chArr.length; i++) {
             chArr[i] = (char) (chArr[i] + 1);
             }
@@ -209,6 +209,30 @@ public class DemoArray {
             }
         }
         System.out.println(maxNumChar); // p
+
+        //
+        int[] arr20 = new int[] {20, -20, 90, 50, -40};
+        // Sorting without creating a new array
+        // Move the max value to tail
+        // Step 1: [X, X, X, X, 90]
+        // Step 2: [X, X, X, 50, 90]
+        // Step 3: [X, X, 20, 50, 90]
+        // Step 4: [X, -20, 20, 50, 90]
+        // Step 5: [-40, -20, 20, 50, 90]
+
+        for (int i = 0; i < arr20.length - 1; i++) { // one loop can only swap one item
+            for (int j = 0; j < arr20.length - 1; j++) {
+            if (arr20[j] > arr20[j + 1]) {
+                temp = arr20[j + 1];
+                arr20[j + 1] = arr20[j];
+                arr20[j] = temp;
+            }
+            }
+
+        }
+
+        System.out.println(Arrays.toString(arr20)); // {-40, -20, 20, 50, 90}
+
 
     }
 }

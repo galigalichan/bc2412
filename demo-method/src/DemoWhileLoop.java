@@ -68,7 +68,7 @@ public class DemoWhileLoop {
         // User: 47
         // Bomb!
         
-        // While, Scanner, Random
+        // While, Scanner, Random (Use While Loop instead because we do not know when it will stop)
         int min = 1;
         int max = 100;
         int bomb = new Random().nextInt(100) + 1; // 1-100
