@@ -85,17 +85,17 @@ public class LoopExercise {
       // Use: for loop + if + substring method
       String s8a = "abcba";
       String s8b = "cba";
+      boolean isSubstring = false;
     
       for (int i = 0; i < s8a.length()-2; i++) {
-        if (s8a.substring(i, i+3) == s8b) {
-        System.out.println("s8b is a substring.");
-        break;}
+        if (s8a.substring(i, i+3).equals(s8b)) {
+        isSubstring = true;
+        }
         else {
-        System.out.println("s8b is not a substring.");
-        break;
+        isSubstring = false;
         }
         }
-
+        System.out.println(isSubstring);
   
       // 9. Count the number of char value in the given String s9
       // print "count=2"
@@ -113,6 +113,13 @@ public class LoopExercise {
       // Print arr10: ["akc", "kkk", "k", "kbk", "mkk"]
       // Use: for loop + replace method
       String[] arr10 = new String[] {"akc", "xxx", "x", "xbx", "mkx"};
+      for (int i = 0; i < arr10.length; i++) {
+        if (arr10[i].contains('x')) {
+
+        }
+      }
+      
+      System.out.println(arr10);
 
   
       // 11. Count the number of Uppercase char value in the given string s11
@@ -156,14 +163,20 @@ public class LoopExercise {
   
       // 15. Find the max value and min value in arr14
       // Use One Loop + if
-      int temp = 0;
+      int min = Integer.MAX_VALUE;
+      int max = Integer.MIN_VALUE;
       for (int i = 0; i < arr14.length - 1; i++) {
         if (arr14[i] > arr14[i+1]) {
-            temp = (int) arr14[i+1];
+            min = (int) arr14[i+1];
             arr14[i+1] = arr14[i];
-            arr14[i] = temp;
+            arr14[i] = min;
+        } else {
+            max = (int) arr14[i+1];
+            arr14[i+1] = arr14[i];
+            arr14[i] = max;
         }
-      } System.out.println(temp);
+      } System.out.println(min);
+        System.out.println(max);
   
       // 16. Declare a float value (arr16) array with value 0.2, 0.3, 0.6
       float[] arr16 = new float[3];
