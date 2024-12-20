@@ -95,7 +95,12 @@ public class LoopExercise {
         isSubstring = false;
         }
         }
-        System.out.println(isSubstring);
+        if (isSubstring) {
+          System.out.println("s8b is a substring.");
+        } else {
+          System.out.println("s8b is not a substring.");
+        }
+        
   
       // 9. Count the number of char value in the given String s9
       // print "count=2"
@@ -113,22 +118,28 @@ public class LoopExercise {
       // Print arr10: ["akc", "kkk", "k", "kbk", "mkk"]
       // Use: for loop + replace method
       String[] arr10 = new String[] {"akc", "xxx", "x", "xbx", "mkx"};
-      for (int i = 0; i < arr10.length; i++) {
-        if (arr10[i].contains('x')) {
-
-        }
-      }
       
-      System.out.println(arr10);
+      for (int i = 0; i < arr10.length; i++) {
+        arr10[i].replace("x","k");
+      }
+      System.out.println(Arrays.toString(arr10));
 
   
       // 11. Count the number of Uppercase char value in the given string s11
       // Print "count uppercase=4"
       // Use: for loop + if
       String s11 = "kLKloOOu";
-    
+      char[] arr11 = s11.toCharArray();
+      int countOfUpperCase = 0;
+      
+      for (int i = 0; i < arr11.length; i++) {
+        if (arr11[i] - 'a' < 0) {
+          countOfUpperCase++;
+        }
+      }
 
-  
+      System.out.println("count uppercase=" + countOfUpperCase);
+
       // 12. Print the following pattern of * value
       // *****
       // *****
@@ -151,6 +162,25 @@ public class LoopExercise {
       // u -> 4 score
       // for other character, -1 score
       String s13 = "lrlaudbucp";
+      char[] arr13 = s13.toCharArray();
+      int totalScore = 0;
+
+      for (int i = 0; i < arr13.length; i++){
+      switch (i) {
+        case 'l':
+          totalScore += 1;
+        case 'r':
+          totalScore += 3;
+        case 'd':
+          totalScore += 2;
+        case 'u':
+          totalScore += 4;
+        default: //! else
+          totalScore -= 1;
+    }}
+
+      System.out.println(totalScore);
+      
 
 
       
@@ -183,13 +213,14 @@ public class LoopExercise {
       arr16[0] = 0.2f;
       arr16[1] = 0.3f;
       arr16[2] = 0.6f;
-  
+    
       // 17. Add value 0.1 to each of value in array arr16
       // Print: [0.3, 0.4, 0.7]
       // Use BigDecimal
       for (int i = 0; i < 3; i++) {
-        arr16[i] += 0.1f;
+        arr16[i] += 0.1;
       }
+
       System.out.println(Arrays.toString(arr16));
   
       // 18. Count the number of target strings in the String[]
@@ -206,20 +237,45 @@ public class LoopExercise {
       // Assumption: each digit value appear once in the String
       // Print: "49280"
       String s19 = "40289";
+      char[] arr19 = new char[s19.length()];
+
       for (int i = 0; i < s19.length(); i++) {
-        
+        arr19[i] = s19.charAt(i);
       }
       
+      // ['4','0','2','8','9']
+      int minIndex = -1;
+      int maxIndex = -1;
+      int min19 = Integer.MAX_VALUE;
+      int max19 = Integer.MIN_VALUE;
+      for (int i = 0; i < arr19.length; i++) {
+        if (arr19[i] > max19) {
+          max19 = arr19[i];
+          maxIndex = i;
+        }
+        if (arr19[i] < min19) {
+          min19 = arr19[i];
+          minIndex = i;
+        }
+      }
+      // swap
+      char temp19 = ' ';
+      temp19 = arr19[maxIndex];
+      arr19[maxIndex] = arr19[minIndex];
+      arr19[minIndex] = temp19;
+
+      System.out.println(arr19);
   
       // 20. Find the longest String in the String array
       // Print "longest=programming"
       String[] arr20 = new String[] {"python", "array", "programming", "java", "bootcamp"};
+      String longestString = "";
       for (int i = 0; i < arr20.length - 1; i++) {
         if (arr20[i].length() > arr20[i+1].length()) {
-            arr20[i+1] = arr20[i];
+            longestString = arr20[i];
         }
       }
-      System.out.println("longest=" + arr20[4]);
+      System.out.println("longest=" + longestString);
 
     }
   }
