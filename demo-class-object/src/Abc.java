@@ -24,9 +24,16 @@ public class Abc {
             // name, age, email
         }
 
+        // String s2 = p2;
+        // Sting s3 = new Integer(23);
+
+
 
         String s1 = "hello";
         String [] strings = new String[] {s1, "world"};
+
+        double d1 = Double.valueOf(0.6f);
+        System.out.println(d1);
 
 
 
