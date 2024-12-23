@@ -14,7 +14,7 @@ public class LoopExercise {
       int[] arr = new int[5];
       for (int i = 0; i < 5; i++) {
         arr[i] = i;
-    }
+      }
         System.out.println(Arrays.toString(arr));
       
       // 3. Print even numbers between 2 and 20
@@ -67,13 +67,13 @@ public class LoopExercise {
       // 7. Check if 'd' exists in the string.
       // print "d is found."
       // otherwise, print "d is not found."
-      int count = 0;
+      boolean found = false;
       String str7 = "ijkabcpodi";
       for (int i = 0; i < str7.length(); i++) {
         if (str7.charAt(i) == 'd') {
-            count += 1;}}
+            found = true;}}
         
-        if (count > 0) {
+        if (found) {
         System.out.println("d is found.");}
         else {
         System.out.println("d is not found.");    
@@ -107,24 +107,23 @@ public class LoopExercise {
       // Use: for loop + if
       String s9 = "pampers";
       char c9 = 'p';
-      int count2 = 0;
+      int count9 = 0;
       for (int i = 0; i < s9.length(); i++) {
         if (s9.charAt(i) == c9) {
-            count2 += 1;
+            count9 += 1;
         }
-      } System.out.println("count="+count2);
+      } System.out.println("count="+count9);
   
       // 10. Replace all char value 'x' in the given String array by 'k'
       // Print arr10: ["akc", "kkk", "k", "kbk", "mkk"]
       // Use: for loop + replace method
       String[] arr10 = new String[] {"akc", "xxx", "x", "xbx", "mkx"};
-      
+
       for (int i = 0; i < arr10.length; i++) {
-        arr10[i].replace("x","k");
+        arr10[i] = arr10[i].replace("x","k");
       }
       System.out.println(Arrays.toString(arr10));
 
-  
       // 11. Count the number of Uppercase char value in the given string s11
       // Print "count uppercase=4"
       // Use: for loop + if
@@ -216,12 +215,22 @@ public class LoopExercise {
     
       // 17. Add value 0.1 to each of value in array arr16
       // Print: [0.3, 0.4, 0.7]
-      // Use BigDecimal
-      for (int i = 0; i < 3; i++) {
-        arr16[i] += 0.1;
+      // Use BigDecimal // Convert to double first
+
+      double d160 = arr16[0];
+      double d161 = arr16[1];
+      double d162 = arr16[2];
+      BigDecimal bd160 = BigDecimal.valueOf(d160);
+      BigDecimal bd161 = BigDecimal.valueOf(d161);
+      BigDecimal bd162 = BigDecimal.valueOf(d162);
+      BigDecimal bd163 = BigDecimal.valueOf(0.1);
+      double[] dArr16 = new double[] {bd160.doubleValue(), bd161.doubleValue(), bd162.doubleValue()};
+
+      for (int i = 0; i < dArr16.length; i++) {
+        dArr16[i] += bd163.doubleValue();
       }
 
-      System.out.println(Arrays.toString(arr16));
+      System.out.println(Arrays.toString(dArr16));
   
       // 18. Count the number of target strings in the String[]
       String[] arr18 = new String[] {"Steve", "Tommy", "Katie", "Tommy", "Lydia"};

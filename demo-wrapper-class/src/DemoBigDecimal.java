@@ -19,7 +19,7 @@ public class DemoBigDecimal {
 
         // subtract
         System.out.println(0.3 - 0.1); // 0.19999999999999998
-        BigDecimal bd4= BigDecimal.valueOf(0.3);
+        BigDecimal bd4 = BigDecimal.valueOf(0.3);
         BigDecimal bd5 = BigDecimal.valueOf(0.1);
         BigDecimal bd6 = bd4.subtract(bd5);
         System.out.println(bd6.doubleValue()); // 0.2
