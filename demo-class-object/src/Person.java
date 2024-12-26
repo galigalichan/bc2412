@@ -21,7 +21,7 @@ public class Person { // blueprint - define a Person (class = file)
     }
 
     public boolean isElderly() {
-        return 
+        return this.age > 65;
     }
 
     public boolean isMale() {

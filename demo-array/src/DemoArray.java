@@ -50,9 +50,9 @@ public class DemoArray {
             if (target.equals(arr3[i])) {
                 isTargetExist = true;
             }
-            System.out.println(isTargetExist); // true
         }
-
+        System.out.println(isTargetExist); // true
+        
         char[] arr4 = new char[] { 'b', 'c', 'a', };
         // arr4[0] = 'b';
         // arr4[1] = 'c';
@@ -162,7 +162,7 @@ public class DemoArray {
         System.out.println(String.valueOf('A')); // "A"
 
         Integer i1 = Integer.valueOf("123");
-        System.out.println(i1); // 23
+        System.out.println(i1); // 123
 
         // Integer i2 = Integer.valueOf("h"); // java.lang.NumberFormatException
 
@@ -209,6 +209,7 @@ public class DemoArray {
             }
         }
         System.out.println(maxNumChar); // p
+        System.out.println(max2); // 3
 
         //
         int[] arr20 = new int[] {20, -20, 90, 50, -40};

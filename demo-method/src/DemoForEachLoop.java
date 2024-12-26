@@ -12,14 +12,13 @@ public class DemoForEachLoop {
 
         // 3 + 4
         // 4 + 5
-        for (int i = 0; i < arr.length; i++) {
+        for (int i = 0; i < arr.length - 1; i++) {
             System.out.println(arr[i] + arr[i + 1]);
         }
 
         // for loop is prone to error (imagine there are 10000 lines)
         int temp = -1;
         for (int i = 0; i < arr.length / 2; i++) {
-            System.out.println(arr[i] + arr[i + 1]);
             temp = arr[i];
             arr[i] = arr[arr.length - i - 1];
             arr[arr.length - i - 1] = temp;
@@ -44,7 +43,9 @@ public class DemoForEachLoop {
         String target = "ijk";
         // true
         for (String x: arr3) {
-            if 
+            if (x == target) {
+                System.out.println("true"); 
+            }
         }
 
     }

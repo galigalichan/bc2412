@@ -18,7 +18,7 @@ public class Product { // class
         return this.productName;
     }
 
-    public boolean getFromOverseas() {
+    public boolean isFromOverseas() {
         return this.fromOverseas;
     }
 

@@ -12,9 +12,9 @@ public class DemoWhileLoop {
         int j = 0; // ! 1. declare the counter outside the loop
         while (j < 3) { // continue criteria
             System.out.println(j);
-            j++; // ! 2. flexible to control the j
-            j++;
-            j++;
+            j++; // ! 2. flexible to control the j // j = 1
+            j++; // j = 2
+            j++; // j = 3 -> stop
         }
 
         String s = "hello";
@@ -40,7 +40,7 @@ public class DemoWhileLoop {
         System.out.println(found);
 
         // Random
-        int number = new Random().nextInt(3);
+        int number = new Random().nextInt(3); // 0-2
         System.out.println(number);
 
         int marksix = new Random().nextInt(49) + 1; // (0-48) + 1
