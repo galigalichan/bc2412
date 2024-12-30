@@ -34,7 +34,7 @@ public class Supermarket {
         worker1.moveIn(30);
         worker2.moveOut(4);
         System.out.println(Worker.getWorkerCount()); // 2
-        System.out.println(s1.getAvailableStock()); // 
+        System.out.println(s1.getAvailableStock()); // 26
 
 
 
