@@ -21,7 +21,7 @@ public class Student {
     // Student 3 has 0 candies (0,0,0,0)
     // Student 4 has 6 candies (2,2,2,0)
     // Student 5 has 4 candies (1,1,1,1)
-    // Student 6 has 0 candies (0,0)
+    // Student 6 has 0 candies (0,0,0)
 
     // Tips: static -> candyCount (While Loop)
 

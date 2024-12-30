@@ -6,38 +6,19 @@ public class Library {
         // 2) removeByTitle, return Book.
         // 3) searchByTitle, return Book[].
 
-        // Librarian (add/remove), Library (search), Book
-    
-    private Book[] books;
+        public static Library l1;
+    // Librarian (add/remove), Library (search), Book
+    private int availableBooks;
 
-    public Library() {
-        this.books = new Book[0];
+    public Library(int availableBooks) {
+        this.availableBooks = availableBooks; 
     }
 
-    public void addBook(Book book) {
-        Book[] newArr = new Book[this.books.length + 1];
-        for (int i = 0; i < this.books.length; i++) {
-            newArr[i] = this.books[i];
-        }
-            newArr[newArr.length - 1] = book;
-            this.books = newArr;
-    }
+    public Book[] books;
+
 
     public Book[] getBooks() {
         return this.books;
-    }
-
-    // Assume remove the first book with same title
-    public Book removeByTitle(String title) {
-        Book[] newArr = new Book[this.books.length - 1];
-        int idx = 0;
-        for (int i = 0; i < this.books.length; i++) {
-            if (this.books[i].equals(book)) {
-                continue;
-            }
-            newArr[idx++] = this.books[i];
-        }
-        return null;
     }
 
 
@@ -46,4 +27,13 @@ public class Library {
         return null; 
     }
 
+    public static void main(String[] args) {
+        Library l1 = new Library(0);
+
+
+        
+
+
+
+    }
 }
