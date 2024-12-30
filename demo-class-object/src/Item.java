@@ -5,6 +5,11 @@ public class Item {
     private double price;
     private int quantity;
 
+
+public Item() { // empty constuctor
+
+}
+
 public Item(String productName, double price, int quantity) {
     this.productName = productName;
     this.price = price;
@@ -24,23 +29,16 @@ public int getQuantity() {
 
 }
 
-public void setQuantity (int quantity) {
+public void setQuantity(int quantity) {
     this.quantity = quantity;
 }
 
 // instance method
-public double itemSubtotal() {
-    return BigDecimal.valueOf(this.price).multiply(BigDecimal.valueOf(this.quantity)).doubleValue();
+public double totalAmount() {
+    return BigDecimal.valueOf(this.price)
+        .multiply(BigDecimal.valueOf(this.quantity))
+        .doubleValue();
 }
-
-public static void main(String[] args) {
-
-
-  
-}
-
-
-
 
 
 }

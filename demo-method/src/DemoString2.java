@@ -36,7 +36,7 @@ public class DemoString2 {
         System.out.println("".isBlank()); // false
         System.out.println(" ".isBlank()); // true
 
-        System.out.println(" hel lo ".trim()); // "he llo"
+        System.out.println(" hel lo ".trim()); // "hel lo"
         System.out.println("abc".compareTo("bbb")); // -1
         System.out.println("abc".compareTo("dbb")); // -3
         System.out.println("aac".compareTo("azb")); // -25 (a vs z) counts the first difference
