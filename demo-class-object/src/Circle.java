@@ -2,7 +2,6 @@ import java.math.BigDecimal;
 
 public class Circle {
     private double radius;
-    private String color;
 
     // Constructor
     public Circle(double radius) {
@@ -20,7 +19,7 @@ public class Circle {
     }
 
     // instance method (above the object)
-    public double calculateArea() {
+    public double calculateArea() { // Without loop, it's constant time which is negligible to Java, so don't bother to store the area value instead of calculating every time.
         return BigDecimal.valueOf(this.radius)
         .multiply(BigDecimal.valueOf(this.radius))
         .multiply(BigDecimal.valueOf(Math.PI))

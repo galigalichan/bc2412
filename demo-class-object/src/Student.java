@@ -5,7 +5,7 @@ public class Student {
     private int candiesReceived;
     private static int candyCount = 20;
 
-    // Question
+    // Question 1:
     // 20 candies -> distribute among students according to their score
     // Rule: Every round of distribution, Above 80 score -> 2 candies; Above 60 - 79 score -> 1 candy
     // Student 1: 67 score

@@ -10,13 +10,14 @@ public Item() { // empty constuctor
 
 }
 
+// first time
 public Item(String productName, double price, int quantity) {
     this.productName = productName;
     this.price = price;
     this.quantity = quantity;
 }
 
-public String getProductName() {
+public String getProductName() {  // Since the field is private, you need a getter to access it
     return this.productName;
 }
 
@@ -29,6 +30,7 @@ public int getQuantity() {
 
 }
 
+// Setters allow modifications to objects.
 public void setQuantity(int quantity) {
     this.quantity = quantity;
 }
