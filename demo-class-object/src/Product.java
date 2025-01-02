@@ -38,7 +38,7 @@ public class Product { // class
 
         Product[] products = new Product[] {p1, p2, p3, p4};
         for (Product p: products) {
-            System.out.println(p.getProductName() + ", " + p.getFromOverseas() + ", " + p.getUnitPrice() + ", " + p.getUnit());
+            System.out.println(p.getProductName() + ", " + p.isFromOverseas() + ", " + p.getUnitPrice() + ", " + p.getUnit());
         }
 
     }

@@ -12,7 +12,7 @@ public class Library {
 
     public static int availableBooks;
 
-    private Book[] books;
+    Book[] books;
 
     // constructor
     public Library() {
@@ -23,15 +23,11 @@ public class Library {
         return this.books;
     }
 
-    // method signatures
-    public void add(Book book) {
-        Book[] books = new Book[this.books.length + 1];
-        for (int i = 0; i< this.books.length; i++) {
-            books[i] = this.books[i];
-        }
-        books[books.length - 1] = book;
+    public void setBooks(Book[] books) {
         this.books = books;
     }
+
+    // method signatures
 
     // Assueme remove the first book with same title
     // 1. Remove the item
@@ -40,32 +36,6 @@ public class Library {
     // Proofreading
     // 1. Focus negative cases
     // 2. Variable Scope
-    public Book removeByTitle(String title) {
-        int targetRemoveIndex = -1;
-        for (int i = 0; i< this.books.length; i++) {
-            if (this.books[i].getTitle().equals(title)) {
-                // this.books -> books array object
-                // this.books[i] -> book object
-                targetRemoveIndex = i;
-                break;
-            }
-        }
-
-        Book targetRemoveBook = null;
-        if (targetRemoveIndex != -1) { // book found
-            Book[] books = new Book[this.books.length - 1];
-            int idx = 0;
-            for (int i = 0; i < this.books.length; i++) {
-                if (i != targetRemoveIndex) {
-                books[idx++] = this.books[i];
-            }   else {
-                targetRemoveBook = this.books[i]; // write down the address
-            }
-        }
-        this.books = books;
-        }
-        return targetRemoveBook; // if not found, return null
-    }
 
     // Serarch a sub-string of the title
     // What Book object you are going to return?
@@ -90,10 +60,15 @@ public class Library {
 
 
     public static void main(String[] args) {
+        // Book
+        // Library
+        // Librarian
+
         Library lb1 = new Library();
-        lb1.add(new Book("ABC", "Tommy"));
-        lb1.add(new Book("DEF", "Jenny"));
-        lb1.add(new Book("ABCD", "Jimmy"));
+        Librarian lbn1 = new Librarian(lb1);
+        lbn1.add(new Book("ABC", "Tommy"));
+        lbn1.add(new Book("DEF", "Jenny"));
+        lbn1.add(new Book("ABCD", "Jimmy"));
     
         for (Book book : lb1.getBooks()) {
           System.out.println(book.getTitle() + " " + book.getAuthor());
@@ -108,7 +83,7 @@ public class Library {
         // ABC Tommy
         // ABCD Jimmy
     
-        Book removedBook = lb1.removeByTitle("DEF");
+        Book removedBook = lbn1.removeByTitle("DEF");
         System.out.println(removedBook.getTitle() + " " + removedBook.getAuthor()); // DEF Jenny
         System.out.println(lb1.size()); // 2
 

@@ -1,9 +1,9 @@
 import java.util.Arrays;
 
 public class Student {
+    private long id;
     private int score;
     private int candiesReceived;
-    private static int candyCount = 20;
 
     // Question 1:
     // 20 candies -> distribute among students according to their score
@@ -26,9 +26,14 @@ public class Student {
     // Tips: static -> candyCount (While Loop)
 
     //Constructor
-    public Student(int score) {
+    public Student(long id, int score) {
+        this.id = id;
         this.score = score;
         this.candiesReceived = 0;
+    }
+
+    public long getId() {
+        return this.id;
     }
 
     public int getScore() {
@@ -39,31 +44,42 @@ public class Student {
         return this.candiesReceived;
     }
 
+
+    public void addOneCandy() {
+        this.candiesReceived++;
+    }
+
+    public void addTwoCandy() {
+        this.candiesReceived += 2;
+    }
+
+
     public static void main(String[] args) {
-        Student s1 = new Student(67);
-        Student s2 = new Student(89);
-        Student s3 = new Student(50);
-        Student s4 = new Student(99);
-        Student s5 = new Student(60);
-        Student s6 = new Student(59);
+        Student s1 = new Student(1L,67);
+        Student s2 = new Student(2L,89);
+        Student s3 = new Student(3L,50);
+        Student s4 = new Student(4L,99);
+        Student s5 = new Student(5L,60);
+        Student s6 = new Student(6L,59);
         Student[] students = new Student[] {s1, s2, s3, s4, s5, s6};
 
-
-        while (candyCount > 0) {
-        for (int i = 0; i < students.length; i++) {
-        if (candyCount - 2 >= 0 && students[i].getScore() >= 80) {
-            students[i].candiesReceived = students[i].candiesReceived + 2;
-            candyCount = candyCount - 2;
-        } else if (candyCount - 1 >= 0 && students[i].getScore() >= 60 && students[i].getScore() < 80) {
-            students[i].candiesReceived++;
-            candyCount--;
+        while (Candy.candyCount > 0) {
+        for (Student s : students) {
+        if (Candy.candyCount - 2 >= 0 && s.getScore() >= 80) {
+            s.addTwoCandy();
+            Candy.candyCount -= 2;
+        } else if (Candy.candyCount - 1 >= 0 && s.getScore() >= 60 && s.getScore() < 80) {
+            s.addOneCandy();
+            Candy.candyCount--;
         }
         }
         }
 
         for (Student s : students) {
-        System.out.println(s.getCandiesReceived());}
+            System.out.println("Student " + s.getId() + " has " + s.getCandiesReceived());
 
         }
+
+    }
 
 }
