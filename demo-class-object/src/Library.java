@@ -11,7 +11,6 @@ public class Library {
     // Librarian (add/remove), Library (search), Book
 
     public static int availableBooks;
-
     Book[] books;
 
     // constructor

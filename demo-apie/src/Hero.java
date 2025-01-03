@@ -1,4 +1,4 @@
-public class Character1 {
+public class Hero {
     // HP - Health Point
     // MP - Magic Point
     // Level -> Increase Max HP, Max MP
@@ -17,7 +17,7 @@ public class Character1 {
     private int MaxMP3 = 200;
     private int level;
     
-    public Character1() {
+    public Hero() {
         this.HP = 100;
         this.MP = 100;
         this.level = 1;
@@ -107,38 +107,38 @@ public class Character1 {
     }
 
     public static void main(String[] args) {
-        Character1 ch1 = new Character1();
-        ch1.receivesMinorAttack();
-        ch1.receivesMajorAttack();
-        ch1.receivesMajorAttack();
-        System.out.println(ch1.isAlive()); // true
-        System.out.println(ch1.getHP()); // 30 
-        ch1.usesSpell();
-        ch1.usesSpell();
-        ch1.usesSpell(); // Insufficient MP. You cannot use spells at this moment.
-        System.out.println(ch1.getMP()); // 0
-        ch1.drinksHealingPotion();
-        System.out.println(ch1.getHP()); // 80
-        ch1.drinksHealingPotion();
-        System.out.println(ch1.getHP()); // 100
-        ch1.gainsMagicWand();
-        ch1.attendsAcademy();
-        System.out.println(ch1.getLevel()); // 2
-        ch1.gainsMagicWand();
-        ch1.gainsMagicWand();
-        System.out.println(ch1.getMP()); // 150
-        ch1.gainsMagicWand();
-        System.out.println(ch1.getMP()); // 150
-        ch1.usesSpell();
-        ch1.receivesMajorAttack();
-        ch1.receivesMinorAttack();
-        ch1.receivesMajorAttack();
-        System.out.println(ch1.isAlive()); // true
-        System.out.println(ch1.getHP()); // 30
-        ch1.attendsAcademy();
-        ch1.attendsAcademy(); // You have reached the maximum level.
-        System.out.println(ch1.getLevel()); // 3
-        ch1.receivesMajorAttack(); // GAME OVER
+        Hero h1 = new Hero();
+        h1.receivesMinorAttack();
+        h1.receivesMajorAttack();
+        h1.receivesMajorAttack();
+        System.out.println(h1.isAlive()); // true
+        System.out.println(h1.getHP()); // 30 
+        h1.usesSpell();
+        h1.usesSpell();
+        h1.usesSpell(); // Insufficient MP. You cannot use spells at this moment.
+        System.out.println(h1.getMP()); // 0
+        h1.drinksHealingPotion();
+        System.out.println(h1.getHP()); // 80
+        h1.drinksHealingPotion();
+        System.out.println(h1.getHP()); // 100
+        h1.gainsMagicWand();
+        h1.attendsAcademy();
+        System.out.println(h1.getLevel()); // 2
+        h1.gainsMagicWand();
+        h1.gainsMagicWand();
+        System.out.println(h1.getMP()); // 150
+        h1.gainsMagicWand();
+        System.out.println(h1.getMP()); // 150
+        h1.usesSpell();
+        h1.receivesMajorAttack();
+        h1.receivesMinorAttack();
+        h1.receivesMajorAttack();
+        System.out.println(h1.isAlive()); // true
+        System.out.println(h1.getHP()); // 30
+        h1.attendsAcademy();
+        System.out.println(h1.getLevel()); // 3
+        h1.attendsAcademy(); // You have reached the maximum level.
+        h1.receivesMajorAttack(); // GAME OVER
 
     }
 
