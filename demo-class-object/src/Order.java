@@ -28,9 +28,9 @@ public void removeItem(Item item) {
     int idx = 0;
     int countTarget = 0;
     for (int i = 0; i < this.items.length; i++) {
-        if (this.items[i].equals(item) && countTarget == 0) {
+        if (this.items[i].equals(item) && countTarget == 0) { // remove the item that has never appeared = the first occurrence
             countTarget++;
-            continue;
+            continue; // skip copying this 
         }
         newArr[idx++] = this.items[i]; // copy
         }

@@ -32,9 +32,15 @@ public class Cat extends Animal {
 
     }
 
+    @Override
+    public void eat() {
+        System.out.println("Cat is eating...");
+    }
+
     public static void main(String[] args) {
         Cat cat = new Cat("ABC", 8);
         System.out.println(cat.getName()); // ABC
-        cat.walk();
+        cat.walk(); // Cat itself method
+        cat.eat(); // Override Parent method implementation: Animal is eating -> Cat is eating
     }
 }

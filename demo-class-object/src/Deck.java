@@ -21,12 +21,18 @@ public class Deck {
         
         System.out.println(Math.PI); // public & static
         // Math.PI: public static (no need to "new") final
+        Card card = new Card('A','S');
+        Card card2 = new Card('A','S');
+
+        if(card.equals(new Card('A','s'))) {
+
+        }
 
         // Card.x = 10;
         // Card.suites = new char[3];
         // Card c1 = new Card('A', 'D');
 
-        System.out.println(Arrays.toString(deck));
+
 
     }
 
