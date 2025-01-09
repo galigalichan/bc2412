@@ -7,10 +7,10 @@ public class Deck {
 
     // constructor: needs to run from beginning to end to create objects.
     public Deck() {
-        this.cards = new Card[Card.SUITES.length * Card.RANKS.length]; // 13 * 4
+        this.cards = new Card[Card.SUITS.length * Card.RANKS.length]; // 13 * 4
         int idx = 0;
         for (char rank : Card.RANKS) {
-            for (char suite : Card.SUITES) {
+            for (char suite : Card.SUITS) {
                 this.cards[idx++] = new Card(rank, suite);
             }
         }
@@ -24,7 +24,7 @@ public class Deck {
         Card card = new Card('A','S');
         Card card2 = new Card('A','S');
 
-        if(card.equals(new Card('A','s'))) {
+        if(card.equals(new Card('A','S'))) {
 
         }
 

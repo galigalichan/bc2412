@@ -31,10 +31,10 @@ public class DemoWrapperClass {
         Character c2 = c1; // auto-box
         System.out.println(c2.compareTo(('a'))); // 0
         // 0 -> Equals
-        Character c3 = 'b';
+        Character c3 = 'c';
         System.out.println(c3.compareTo(('a'))); // 2 (ascii of 'c' > ascii of 'a')
         Character c4 = 'A';
-        System.out.println(c4.compareTo(('A'))); // -32 (ascii of 'A' < ascii of 'a')
+        System.out.println(c4.compareTo(('a'))); // -32 (ascii of 'A' < ascii of 'a')
 
         int asciiOfA = 'A';
         int asciiOfa = 'a';

@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 // Java Project (load built-in tools, String, Primitives)
-// proactviely import non-built-in tools (Scanner)
+// proactively import non-built-in tools (Scanner)
 public class DemoScanner {
     public static void main(String[] args) {
         String s = "abc";
@@ -26,13 +26,11 @@ public class DemoScanner {
         int totalMinutes = 0;
         int hour = 24;
         for (int i = 0; i < day; i++) {
-            for ( int j = 0; j < hour; j++)
+            for (int j = 0; j < hour; j++)
             totalMinutes += 60;
         }
         System.out.println(totalMinutes);
 
-
-
-
+        scanner.close();
     }
 }

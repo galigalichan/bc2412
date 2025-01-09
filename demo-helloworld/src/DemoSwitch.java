@@ -30,7 +30,7 @@ public class DemoSwitch {
         switch (gender) {
             case 'M':
                 System.out.println("Male");
-                break;
+                break; // Without break, the statement would continue to the next case.
             case 'F':
                 System.out.println("Female");
                 break;

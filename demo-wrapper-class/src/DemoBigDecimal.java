@@ -85,7 +85,7 @@ public class DemoBigDecimal {
         max = Math.max(x, max); // if (x > max) {max = x;}
         max = Math.max(y, max);
 
-        int [] arr = new int [] {10, 9 ,3};
+        int[] arr = new int[] {10, 9 ,3};
         max = Integer.MIN_VALUE;
         for (int i = 0; i < arr.length; i++) {
             max = Math.max(arr[i], max);
@@ -95,7 +95,7 @@ public class DemoBigDecimal {
 
         System.out.println(Math.sqrt(9)); // Java auto convert int value to double value
         System.out.println(Math.sqrt(10)); // 3.1622776601683795
-        System.out.println(Math.sqrt(-10)); // Nan
+        System.out.println(Math.sqrt(-10)); // NaN
 
         // round() -> nearest to integer
         double u = 3.456;

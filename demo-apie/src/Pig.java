@@ -46,7 +46,7 @@ public class Pig extends Animal {
     }
 
     @Override
-    public String toString() {
+    public String toString() { // mainly for debugging
         return "Pig[" //
             + "age=" + this.age //
             + ", name=" + super.getName() //

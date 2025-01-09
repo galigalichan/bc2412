@@ -7,7 +7,7 @@ public class Triangle extends Shape {
     private double height;
 
 
-    public Triangle(char color, double base, double height) {
+    public Triangle(Color color, double base, double height) {
         super(color);
         this.base = base;
         this.height = height;
@@ -58,8 +58,8 @@ public class Triangle extends Shape {
     }
 
     public static void main(String[] args) {
-        Triangle myTriangle = new Triangle('Y',50.41,78.39);
-        Triangle checkTriangle = new Triangle('Y',50.41,78.39);
+        Triangle myTriangle = new Triangle(Color.RED,50.41,78.39);
+        Triangle checkTriangle = new Triangle(Color.YELLOW,50.41,78.39);
         System.out.println(myTriangle.area());
 
         if (myTriangle.equals(checkTriangle)) {

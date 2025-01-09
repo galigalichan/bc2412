@@ -1,4 +1,4 @@
-public class Cat extends Animal {
+public class Cat extends Animal implements Walkable, Sleepable {
     // Animal.class is a Parent Class
     // Cat.class is a Child Class
     // Inherit all attributes from Parent Class
@@ -27,6 +27,7 @@ public class Cat extends Animal {
 
 
     // walk()
+    @Override
     public void walk() {
         System.out.println("Cat is walking...");
 
@@ -37,10 +38,16 @@ public class Cat extends Animal {
         System.out.println("Cat is eating...");
     }
 
+    @Override
+    public void sleep() {
+        System.out.println("Cat is sleeping...");
+    }
+
     public static void main(String[] args) {
         Cat cat = new Cat("ABC", 8);
         System.out.println(cat.getName()); // ABC
         cat.walk(); // Cat itself method
         cat.eat(); // Override Parent method implementation: Animal is eating -> Cat is eating
+        cat.walkFaster();
     }
 }

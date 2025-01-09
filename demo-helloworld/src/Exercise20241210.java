@@ -20,17 +20,17 @@ public class Exercise20241210 {
 
         // int value -> byte
         maxByte = (byte) (maxByte - 2); // Java: is it safe? Not safe
-        // Step 1: byte value + int value => int value
-        // Step 4: can we assign int value to byte variable? (downcasting)
+        // byte value + int value => int value
+        // can we assign int value to byte variable? (downcasting)
 
-        System.out.println(maxByte); // 125, overflow
+        System.out.println(maxByte); // 125
 
         int x = maxByte; // Java:: is it safe? it is safe
 
         // ! Java: (1) Compile time + (2) Run time
         // (1) java file (.java) -> class file (.class): java code (~human code) -> byte code (~machine code)
-          // (1.1) compile fail. for example (missing ; -> syntax error)
-          // (1.2) compile success -> class file
+        // (1.1) compile fail. for example (missing ; -> syntax error)
+        // (1.2) compile success -> class file
         // (2) Java Virtual Machine (JVM) -> convert class file to machine code -> execute machine mode
 
 
@@ -39,8 +39,8 @@ public class Exercise20241210 {
         int i = 2147483647;
         byte maxByte2 = 126 + 1;
         System.out.println(maxByte2);
-        // byte maxByte3 = 126 + 2;
-        // System.out.println(maxByte3);
+        byte maxByte3 = (byte) (126 + 2);
+        System.out.println(maxByte3); // -128, overflow
     
     }
 }

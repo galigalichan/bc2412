@@ -5,7 +5,7 @@ public class Square extends Shape {
     private double side;
 
 
-    public Square(char color, double side) {
+    public Square(Color color, double side) {
         super(color);
         this.side = side;
     }
@@ -44,8 +44,8 @@ public class Square extends Shape {
     }
 
     public static void main(String[] args) {
-        Square mySquare = new Square('B', 40);
-        Square checkSquare = new Square('B', 40);
+        Square mySquare = new Square(Color.BLUE, 40);
+        Square checkSquare = new Square(Color.RED, 40);
         System.out.println(mySquare.area());
 
         if (mySquare.equals(checkSquare)) {

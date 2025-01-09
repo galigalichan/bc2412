@@ -138,7 +138,7 @@ public class DemoArray {
           }
           System.out.println(Arrays.toString(arr7)); // [x, x, x, x, 109]
 
-        Integer [] arr11 = new Integer [] {9, 6, 4};
+        Integer[] arr11 = new Integer[] {9, 6, 4};
         // Products for all numbers
         int product = 1;
         for (int i = 0; i < arr11.length; i++) {
@@ -146,8 +146,8 @@ public class DemoArray {
         }
             System.out.println(product); // 216
 
-        double [] prices = new double [] {8.2, 6.5, 10.5};
-        int [] quantities = new int [] {9, 8, 3};
+        double[] prices = new double[] {8.2, 6.5, 10.5};
+        int[] quantities = new int[] {9, 8, 3};
         // 8.2 x 9 + 6.5 x 8 + 10.5 x 3
         double totalAmount = 0.0;
         for (int i = 0; i < prices.length; i++) {
@@ -167,7 +167,7 @@ public class DemoArray {
         // Integer i2 = Integer.valueOf("h"); // java.lang.NumberFormatException
 
         // "hello" -> 'h' 'e' 'l' 'l' 'o'
-        char [] chArr = "hello".toCharArray();
+        char[] chArr = "hello".toCharArray();
         // olleh
         char cTemp;
         for (int i = 0; i < chArr.length / 2; i++) {
@@ -190,10 +190,10 @@ public class DemoArray {
             System.out.println(String.valueOf(chArr)); // "ifmmp", char Array -> String
         
         // assume we have small letters ONLY: 26
-        char[] arr12 = new char [] {'p', 'a', 'p', 'b', 'a', 'p'};
+        char[] arr12 = new char[] {'p', 'a', 'p', 'b', 'a', 'p'};
         char maxNumChar = ' ';
         //
-        int [] counters = new int[26];
+        int[] counters = new int[26];
         for (int i = 0; i < arr12.length; i++) {
             counters[arr12[i] - 'a']++; // = counters[arr12[i] - 'a'] + 1
         }
@@ -232,8 +232,38 @@ public class DemoArray {
 
         }
 
-        System.out.println(Arrays.toString(arr20)); // {-40, -20, 20, 50, 90}
+        System.out.println(Arrays.toString(arr20)); // [-40, -20, 20, 50, 90]
 
+        
+    // 19. swap the max digit and min digit
+    // Assumption: each digit value appear once in the String
+    // Print: "49280"
+    String s19 = "40289";
+    char[] arr19 = new char[s19.length()];
+    for (int i = 0; i < s19.length(); i++) {
+      arr19[i] = s19.charAt(i);
+    }
+    // ['4', '0', '2', '8', '9']
+    int minIndex = -1;
+    int maxIndex = -1;
+    int min19 = Integer.MAX_VALUE;
+    int max19 = Integer.MIN_VALUE;
+    for (int i = 0; i < arr19.length; i++) {
+      if (arr19[i] > max19) {
+        max19 = arr19[i];
+        maxIndex = i;
+      }
+      if (arr19[i] < min19) {
+        min19 = arr19[i];
+        minIndex = i;
+      }
+    }
+    // swap
+    char temp19 = ' ';
+    temp19 = arr19[maxIndex];
+    arr19[maxIndex] = arr19[minIndex];
+    arr19[minIndex] = temp19;
+    System.out.println(String.valueOf(arr19));
 
     }
 }

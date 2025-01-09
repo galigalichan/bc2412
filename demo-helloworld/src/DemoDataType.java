@@ -192,9 +192,9 @@ public class DemoDataType {
 
     // char q7 = 70000; // ! out of the range of char value
     
+    // byte -> short -> int -> long -> float -> double
     float f11 = 97;
     double d11 = 97;
-    // byte -> short -> int -> long -> float -> double
     // char -> int -> long -> float -> double
     long l10 = 'a';
     float f10 = 'a';

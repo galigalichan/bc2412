@@ -10,7 +10,7 @@ public class Circle1 extends Shape { // Parent Class: color
 
     // If you don't specifiy the constructor, implicitly you have an empty constructor
 
-    public Circle1(char color, double radius) {
+    public Circle1(Color color, double radius) {
         // if you don't specify super() here, implicitly you are calling super()
         super(color);
         // super(color); // because you have "extends", you have to "super"
@@ -58,8 +58,8 @@ public class Circle1 extends Shape { // Parent Class: color
     public static void main(String[] args) {
         // new Circle();
         // after you specify a constructor, then the default constructor no longer exists.
-        Circle1 myCircle = new Circle1('R',56);
-        Circle1 checkCircle = new Circle1('R',56);
+        Circle1 myCircle = new Circle1(Color.RED,56);
+        Circle1 checkCircle = new Circle1(Color.RED,56);
         System.out.println(myCircle.area());
 
         if (myCircle.equals(checkCircle)) {
@@ -72,6 +72,8 @@ public class Circle1 extends Shape { // Parent Class: color
         System.out.println(checkCircle.hashCode()); // 1078726063
 
         System.out.println(myCircle); // Circle[color=R, radius=56.0]
+
+        Circle1 c1 = new Circle1(Color.YELLOW, 3);
     }
 
 }

@@ -12,22 +12,11 @@ public abstract class Hero {
     // Child Class: Archer, Mage, Warrior
 
     // attackPower
-
+    private int level;
     private int hp;
     private int mp;
-    private int level;
-    
-    // static final
-    private int maxHp1 = 100;
-    private int maxHp2 = 200;
-    private int maxHp3 = 300;
-    private int maxMp1 = 100;
-    private int maxMp2 = 150;
-    private int maxMp3 = 200;
     
     public Hero() {
-        this.hp = 100;
-        this.mp = 100;
         this.level = 1;
     }
 
@@ -45,6 +34,10 @@ public abstract class Hero {
 
     public boolean isAlive() {
         return this.hp > 0;
+    }
+
+    public static Archer createArcher() {
+        return new Archer();
     }
 
     public void receivesMinorAttack() {
@@ -114,5 +107,39 @@ public abstract class Hero {
         }
     }
 
+    public static void main(String[] args) {
+        Archer a1 = Hero1.createArcher();
+        a1.receivesMinorAttack();
+        a1.receivesMajorAttack();
+        a1.receivesMajorAttack();
+        System.out.println(a1.isAlive()); // true
+        System.out.println(a1.gethp()); // 30 
+        a1.usesSpell();
+        a1.usesSpell();
+        a1.usesSpell(); // Insufficient MP. You cannot use spells at this moment.
+        System.out.println(a1.getmp()); // 0
+        a1.drinksHealingPotion();
+        System.out.println(a1.gethp()); // 80
+        a1.drinksHealingPotion();
+        System.out.println(a1.gethp()); // 100
+        a1.gainsMagicWand();
+        a1.attendsAcademy();
+        System.out.println(a1.getLevel()); // 2
+        a1.gainsMagicWand();
+        a1.gainsMagicWand();
+        System.out.println(a1.getmp()); // 150
+        a1.gainsMagicWand();
+        System.out.println(a1.getmp()); // 150
+        a1.usesSpell();
+        a1.receivesMajorAttack();
+        a1.receivesMinorAttack();
+        a1.receivesMajorAttack();
+        System.out.println(a1.isAlive()); // true
+        System.out.println(a1.gethp()); // 30
+        a1.attendsAcademy();
+        System.out.println(a1.getLevel()); // 3
+        a1.attendsAcademy(); // You have reached the maximum level.
+        a1.receivesMajorAttack(); // GAME OVER
+    }
 
 }
