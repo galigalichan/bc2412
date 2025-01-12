@@ -200,5 +200,14 @@ public class DemoDataType {
     float f10 = 'a';
     double d10 = 'a';
 
+    // sum of digits
+    int xx = 97 / 10 + 97 % 10;
+    System.out.println(xx); // 16
+
+    int xxx = 888 / 100 + (888 % 100) / 10 + (888 % 100) % 10;
+    System.out.println(xxx); // 24
+
+    int xxxx = 7654 / 1000 + (7654 % 1000) / 100 + ((7654 % 1000) % 100) / 10 + ((7654 % 1000) % 100) % 10;
+    System.out.println(xxxx); // 22
   }
 }

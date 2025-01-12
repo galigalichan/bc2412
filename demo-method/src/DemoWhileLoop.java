@@ -33,9 +33,9 @@ public class DemoWhileLoop {
         while (k < s.length()) {
             if (s.charAt(k) == target) {
                 found = true;
-                break;
+                break; // if found, break the loop
             }
-            k++;
+            k++; // if not found, continue to try the next round
             }
         System.out.println(found);
 

@@ -2,7 +2,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-public class demoHashMap {
+public class DemoHashMap {
 
     public static class Book {
         private int id;
@@ -65,14 +65,18 @@ public class demoHashMap {
 
         for (Map.Entry<String, Integer> entry : fruitMap.entrySet()) {
             System.out.println(entry.getKey() + " " + entry.getValue());
+            // Apple 3
+            // APPLE 3
         }
 
         for (String key : fruitMap.keySet()) {
             System.out.println(key);
+            // Apple
+            // APPLE
         }
 
         for (Integer value : fruitMap.values()) {
-            System.out.println(value);
+            System.out.println(value); // 3 3
         }
 
         // get value by key

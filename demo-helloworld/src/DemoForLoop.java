@@ -122,7 +122,7 @@ public class DemoForLoop {
         String s = "hello";
         // Count the number of 'l'
         // for + if
-        for (int i = 0; i <s.length(); i++) { // length() in case of empty string; loop all values + filtering
+        for (int i = 0; i < s.length(); i++) { // length() in case of empty string; loop all values + filtering
             if (s.charAt(i) == 'l') {
                 count++; // break does not apply here because you have to check till the last character
             }

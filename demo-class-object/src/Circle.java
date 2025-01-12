@@ -41,7 +41,7 @@ public class Circle {
         Circle c1 = new Circle(3.0);
 
         //Presentation
-        System.out.println(c1.calculateArea()); // ~28.27 // c1 is an obect with method calculateArea
+        System.out.println(c1.calculateArea()); // ~28.27 // c1 is an object with method calculateArea
 
         // Formula
         System.out.println(Circle.calculateArea2(3.0)); // ~~28.27

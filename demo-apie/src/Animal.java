@@ -75,10 +75,10 @@ public class Animal implements Eatable { // complier ensures there's eat() metho
         for (Shape shape : shapes) {
             if (shape instanceof Circle1) { // check if shape is instance(object) of Circle?
                 Circle1 circle = (Circle1) shape; // similar to "double y = 2.0; int x = (int) y;"
-                System.out.println(circle.getRadius()); // comply eith Rule 1
+                System.out.println(circle.getRadius()); // comply with Rule 1
             } else if (shape instanceof Square) {
                 Square square = (Square) shape;
-                System.out.println(square.getSide()); // comply eith Rule 1
+                System.out.println(square.getSide()); // comply with Rule 1
             }
         }
 

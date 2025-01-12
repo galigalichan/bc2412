@@ -22,10 +22,11 @@ public class Square extends Shape {
         return false;
         Square square = (Square) obj;
         return Objects.equals(square.getColor(), super.getColor())
-        && Objects.equals(square.getSide(), this.side);
-
-    }
-
+                && Objects.equals(square.getSide(), this.side);
+        
+            }
+        
+        
     @Override
     public int hashCode() {
         return Objects.hash(super.getColor(), this.side); // hash -> generate a new int number representing the object

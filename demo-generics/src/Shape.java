@@ -1,6 +1,10 @@
 import java.util.ArrayList;
 
 public abstract class Shape {
+    public Shape(Color color) {
+        //TODO Auto-generated constructor stub
+    }
+
     abstract double area();
 
     // public static <T extends Shape> double totalArea(T[] shapes)
@@ -52,5 +56,10 @@ public abstract class Shape {
         }
         }
         System.out.println("Book " + bookName + " is available.");
+    }
+
+    public Object getColor() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getColor'");
     }
 }
