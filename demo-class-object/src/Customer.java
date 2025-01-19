@@ -25,6 +25,7 @@ public Item[] getItem(long orderId) {
     return new Item[0]; // or return null
 
 }
+
 // totalOrderAmount by order id
 public double getTotalOrderAmount(long orderId) {
     for (Order order: this.orders) {
@@ -78,7 +79,7 @@ public static void main(String[] args) {
     Item i4 = new Item("Seaweed", 9.9, 12);
     Item i5 = new Item("Soft Candies", 18, 3);
     Item i6 = new Item("Granola Bar", 20.5, 6);
-    System.out.println(i1.totalAmount());
+    System.out.println(i1.totalAmount()); // 450
 
     Customer c1 = new Customer(1L); // create customer object and then write down the "address" into c1
 
@@ -99,9 +100,9 @@ public static void main(String[] args) {
 
 
     System.out.println(c1.orderSize()); // 3
-    System.out.println(c1.getTotalOrderAmount(2L)); // 
-    System.out.println(c1.getTotalOrderAmount(3L)); // 
-    System.out.println(c1.getTotalOrderAmount(1L)); // 
+    System.out.println(c1.getTotalOrderAmount(2L)); // 8.0
+    System.out.println(c1.getTotalOrderAmount(3L)); // 9.0
+    System.out.println(c1.getTotalOrderAmount(1L)); // 30.9
     System.out.println(c1.isVip()); // false
 
     Order o4 = new Order(4L);

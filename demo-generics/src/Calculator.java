@@ -34,8 +34,8 @@ public class Calculator<T extends Number> { // Byte, Short, Integer, Long, Float
     }
 
     public static void main(String[] args) {
-        Calculator<Byte> calculator = new Calculator<>(Byte.valueOf("10"), Byte.valueOf("20"));
-        Calculator<Number> calculator2 = new Calculator<>(Byte.valueOf("10"), Short.valueOf("20")); // dangerous when the parent Number is involved. There can be tons of combinations.
+        LoginManager<Byte> calculator = new LoginManager<>(Byte.valueOf("10"), Byte.valueOf("20"));
+        LoginManager<Number> calculator2 = new LoginManager<>(Byte.valueOf("10"), Short.valueOf("20")); // dangerous when the parent Number is involved. There can be tons of combinations.
         // private Number x;
         // private Number y;
     }

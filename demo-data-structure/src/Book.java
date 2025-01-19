@@ -11,6 +11,10 @@ public class Book {
         return this.name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     // You are the author of Book. Only you can decide which books are equal.
     @Override
     public boolean equals(Object obj) {
@@ -27,9 +31,4 @@ public class Book {
         return "Book[" + "name= " + this.name + "]";
     }
 
-
-
-    public static void main(String[] args) {
-
-    }
 }

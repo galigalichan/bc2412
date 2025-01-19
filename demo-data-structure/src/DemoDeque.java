@@ -1,6 +1,7 @@
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.LinkedList;
+import java.util.Queue;
 
 public class DemoDeque {
     
@@ -22,9 +23,19 @@ public class DemoDeque {
         // contains
 
         // Practice ArrayDeque
+        Queue<String> ss3 = null;
+        int x = 3;
+        if (x > 2) {
+            ss3 = new ArrayDeque<>();
+        } else {
+            ss3 = new LinkedList<>();
+        }
+        // polymorphism
+
+        ss3.poll(); // different implementations -> performance according to scenario
+
         Deque<String> ss2 = new ArrayDeque<>();
-        Deque<String> ss3 = new ArrayDeque<>();
-
-
+        ss2 = new LinkedList<>();
+        // Deque has wider scope (i.e. add/remove/poll/peek first&last)
     }
 }

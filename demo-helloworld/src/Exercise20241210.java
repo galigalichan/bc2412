@@ -36,11 +36,26 @@ public class Exercise20241210 {
 
         byte b = 127;
         short s = 32767;
-        int i = 2147483647;
+        int j = 2147483647;
         byte maxByte2 = 126 + 1;
-        System.out.println(maxByte2);
+        System.out.println(maxByte2); // 127
         byte maxByte3 = (byte) (126 + 2);
         System.out.println(maxByte3); // -128, overflow
-    
+
+        byte value = 127;
+        for (int i = 0; i < 10; i++) {
+            value++;
+            System.out.println("Value: " + value);
+        }
+        // Value: -128  (i = 0)
+        // Value: -127  (i = 1)
+        // Value: -126  (i = 2)
+        // Value: -125  (i = 3)
+        // Value: -124  (i = 4)
+        // Value: -123  (i = 5)
+        // Value: -122  (i = 6)
+        // Value: -121  (i = 7)
+        // Value: -120  (i = 8)
+        // Value: -119  (i = 9)
     }
 }

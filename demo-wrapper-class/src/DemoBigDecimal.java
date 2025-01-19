@@ -8,15 +8,15 @@ public class DemoBigDecimal {
         if (result == 0.3) {
             System.out.println("Result is 0.3.");
         } else {
-            System.out.println("Result is not 0.3.");
+            System.out.println("Result is not 0.3."); // !!! Result is not 0.3.
         }
 
         // Solution: BigDemical
-        BigDecimal bd1 = BigDecimal.valueOf(0.2);
+        BigDecimal bd1 = BigDecimal.valueOf(0.2); // convert double to BigDecimal before calculation
         BigDecimal bd2 = BigDecimal.valueOf(0.1);
         BigDecimal bd3 = bd1.add(bd2);
-        System.out.println(bd3.doubleValue()); // 0.3
-
+        System.out.println(bd3.doubleValue()); // 0.3 // convert BigDecimal back to double
+        
         // subtract
         System.out.println(0.3 - 0.1); // 0.19999999999999998
         BigDecimal bd4 = BigDecimal.valueOf(0.3);
@@ -72,12 +72,12 @@ public class DemoBigDecimal {
             .multiply(BigDecimal.valueOf(radius))
             .multiply(BigDecimal.valueOf(Math.PI))
             .doubleValue();
-        System.out.println(circleArea); // 
+        System.out.println(circleArea); // 63.61725123519331
 
         circleArea = BigDecimal.valueOf(Math.pow(radius, 2.0))
             .multiply(BigDecimal.valueOf(Math.PI))
             .doubleValue();
-        System.out.println(circleArea);
+        System.out.println(circleArea); // 63.61725123519331
 
         int x = 8;
         int y = 9;
@@ -90,10 +90,12 @@ public class DemoBigDecimal {
         for (int i = 0; i < arr.length; i++) {
             max = Math.max(arr[i], max);
         }
+        System.out.println(max); // 10
 
         // Math.min()
 
-        System.out.println(Math.sqrt(9)); // Java auto convert int value to double value
+        // square root
+        System.out.println(Math.sqrt(9)); // 3.0 // Java auto convert int value to double value
         System.out.println(Math.sqrt(10)); // 3.1622776601683795
         System.out.println(Math.sqrt(-10)); // NaN
 
@@ -107,6 +109,7 @@ public class DemoBigDecimal {
         // Nearest 2 d.p. -> 3.46
         System.out.println(Math.round(u * 100.0) / 100.0); // 3.46
 
+        // absolute value
         System.out.println(Math.abs(-9L)); // 9
 
 

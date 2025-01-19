@@ -28,7 +28,7 @@ public class Calculator {
         System.out.println(c1.sum(8)); // 15
         System.out.println(c1.sum(8.0)); // 15
 
-        // Static Polymorphism
+        // Static / compile-time Polymorphism (overloading)
         // During compile time, Java check the method called by method signature
     }
 }

@@ -13,6 +13,8 @@ public class LeetCode1389 {
         for (int i = 0; i < nums.length; i++) {
             arr.add(index[i], nums[i]);
         }
+        
+        System.out.println(arr); // [0, 4, 1, 3, 2]
 
         int[] target = new int[arr.size()];
         for (int j = 0; j < arr.size(); j++) {

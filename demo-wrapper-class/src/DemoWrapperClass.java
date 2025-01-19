@@ -4,7 +4,7 @@ public class DemoWrapperClass {
         Integer x2 = x; // auto-box
         System.out.println(x2); // 3
         System.out.println(x2.doubleValue()); // 3.0
-        System.out.println(x2.longValue()); // 3, "L" cannot be attached to a vairable.
+        System.out.println(x2.longValue()); // 3, "L" cannot be attached to a variable.
         System.out.println(x2); // 3
 
         String s = "hello";
@@ -69,10 +69,15 @@ public class DemoWrapperClass {
         System.out.println(f3);
 
 
+        Integer intNum1 = Integer.valueOf(42);
+        Integer intNum2 = Integer.valueOf(42);
+        System.out.println(intNum1 == intNum2); // true // Integer cache is used (range from -128 to 127)
+        System.out.println(intNum1.equals(intNum2)); // true
 
-
-
-
+        Integer intNum3 = Integer.valueOf(150);
+        Integer intNum4 = Integer.valueOf(150);
+        System.out.println(intNum3 == intNum4); // false // Integer cache is not used (out of the cache range)
+        System.out.println(intNum3.equals(intNum4)); // true
     
 
 

@@ -75,10 +75,10 @@ public class Animal implements Eatable { // complier ensures there's eat() metho
         for (Shape shape : shapes) {
             if (shape instanceof Circle1) { // check if shape is instance(object) of Circle?
                 Circle1 circle = (Circle1) shape; // similar to "double y = 2.0; int x = (int) y;"
-                System.out.println(circle.getRadius()); // comply with Rule 1
+                System.out.println(circle.getRadius()); // comply with Rule 1 // 50.0
             } else if (shape instanceof Square) {
                 Square square = (Square) shape;
-                System.out.println(square.getSide()); // comply with Rule 1
+                System.out.println(square.getSide()); // comply with Rule 1 // 23.0
             }
         }
 
@@ -91,8 +91,8 @@ public class Animal implements Eatable { // complier ensures there's eat() metho
         animals2[0] = new Cat("Steve",2);
         animals2[1] = new Dog("Owen");
         // animals2[2] = new Animal(); // Animal didn't implement Eatable
-        animals2[1].sleep();
-        animals2[0].sleep();
+        animals2[1].sleep(); // Dog is sleeping...
+        animals2[0].sleep(); // Cat is sleeping...
         // animals2[0].eat();
 
         Animal animal = new Cat("ABC",3);

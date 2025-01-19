@@ -5,7 +5,7 @@ public class LeetCode1662 {
     
         String string1 = "";
         for (int i = 0; i < word1.length; i++) {
-            string1 = string1.concat(word1[i]);
+            string1 = string1.concat(word1[i]); // string1 += word1[i]
             }
     
         System.out.println(string1);

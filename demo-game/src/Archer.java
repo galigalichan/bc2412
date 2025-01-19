@@ -1,21 +1,22 @@
 public class Archer extends Hero {
 
-    public Archer() {
-        super(level);
-        this.hp = Heros.ARC_TAB[0][0];
-        this.mp = Heros.ARC_TAB[1][0];
+
+    public Archer(Role role) {
+        super(role);
 
     }
 
     public static void main(String[] args) {
-        Archer a1 = new Archer();
+        
 
     }
 
+    @Override
+    public int compareTo(Hero o) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'compareTo'");
+    }
 
-
-
-    
 
 
 }

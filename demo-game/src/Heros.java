@@ -1,8 +1,8 @@
 public class Heros {
     // max hp
-    private static final int[][] ARC_TAB = new int[9][10];
-    private static final int[][] WAR_TAB = new int[9][10];
-    private static final int[][] MAG_TAB = new int[9][10];
+    static final int[][] ARC_TAB = new int[9][10];
+    static final int[][] WAR_TAB = new int[9][10];
+    static final int[][] MAG_TAB = new int[9][10];
 
     private static final int ROW_MAX_HP = 0;
     private static final int ROW_MAX_MP = 1;

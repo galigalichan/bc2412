@@ -25,5 +25,23 @@
   - Method name
   - Method signature = input params + method name
 - BigDecimal for math calculations
+## Week 3
+- Class and Object Example: Customer/ Order/ Item Example: Person Example: Human (bmi)
+- Static Variable Example: Supermarket & Worker , Supermarket2 & Worker2
+- Static Method Example: Circle, LoanCalculator
+## Week 4
+- Class & Object Example: Deck & Card Example: Library, Book & Librarian
+- Static Variable Example: Candy & Student
+- Class & Object Example: Candy2 & Student2 & Teacher
+## Week 5
+- ArrayList, HashSet, LinkedList (Node), HashMap, ArrayDeque, PriorityQueue
+- List, Map, Queue, Deque, Set
+- Collections.sort(), Comparable & Comparator
+- Generic
+## Week 6
+- Exception
+- Lambda (Function + Predicate + Consumer), Stream, Optional
+- Big-O, O(1), O(n), O(n2)
+- Recursive
 
 

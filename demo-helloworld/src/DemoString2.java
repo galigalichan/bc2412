@@ -15,6 +15,33 @@ public class DemoString2 {
         // replaceAll() is for replacing strings only, not char.
         System.out.println(name.toUpperCase().replace('E', '*').concat("!!!")); // V*NTUR*NIXLAB, JAVA!!!
     
+        String str = "apple, bananna, cherry, date";
+        String[] fruits = str.split(",\s*");
+
+        for (String fruit : fruits) {
+            System.out.println(fruit);
+            // apple
+            // bananna
+            // cherry
+            // date
+        
+        String str2 = "one, two, three, four, five";
+        String[] parts = str2.split(", ", 3); // limit: maximum number of split substrings
+
+        for (String part : parts) {
+            System.out.println(part);
+            // one
+            // two
+            // three, four, five
+
+        }
+        
+        
+        
+        
+        }
+
+
 
 
 
