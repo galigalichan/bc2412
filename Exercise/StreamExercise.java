@@ -187,7 +187,7 @@ public class StreamExercise {
     // 15. Map and Reduce
     // Task: Given a list of products with their prices, use the map and reduce methods to calculate the
     // total price of all products.
-
+    // reducing - adding numbers in a list with initial value of 0 
     // Create Product Class
     // new Product("Book", 10)
     // new Product("Pen", 5)
@@ -218,7 +218,7 @@ public class StreamExercise {
     List<Integer> numbers6 = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
     // Output: 55
-    Integer sumOfNumbers6 = numbers6.parallelStream().reduce(0, (a, b) -> a + b);
+    Integer sumOfNumbers6 = numbers6.parallelStream().reduce(0, Integer::sum); // reduce(o, (a, b) -> (a + b))
     System.out.println(sumOfNumbers6); // 55
 
     // 18. FlatMap
@@ -240,7 +240,7 @@ public class StreamExercise {
 
     List<String> fruits = Arrays.asList("apple", "banana", "apple", "orange", "banana", "grape");
     // Output: [apple, banana, grape, orange]
-    List<String> newFruits = fruits.stream().distinct().sorted(Comparator.naturalOrder()).collect(Collectors.toList());
+    List<String> newFruits = fruits.stream().distinct().sorted().collect(Collectors.toList());
     System.out.println(newFruits); // [apple, banana, grape, orange]
     
     // 20. Partitioning By
@@ -270,7 +270,6 @@ public class StreamExercise {
     // 22. Find First and Any
     // Task: Given a list of integers, find the first number that is divisible by 3.
     List<Integer> ages = Arrays.asList(4, 7, 9, 12, 16, 21);
-
     // findFirst(), findAny() -> return Optional
     Optional<Integer> newAges = ages.stream().filter(e -> e % 3 == 0).findFirst();
     // Output: 9
@@ -325,7 +324,7 @@ public class StreamExercise {
     List<String> keywords = Arrays.asList("stream", "filter", "map", "sorted", "collect");
     //aggregate functions: count(), max(), min(), average(), sum()
     // Output: 28
-    int keywordsCount = keywords.stream().map(e -> e.length()).reduce(0, (a,b) -> a + b);
+    int keywordsCount = keywords.stream().map(e -> e.length()).reduce(0, Integer::sum);
     System.out.println(keywordsCount); // 28
   }
 
@@ -378,7 +377,7 @@ public class StreamExercise {
         }
 
         @Override
-        public String toString(){
+        public String toString() {
           return this.name + "=" + this.score;
         }
     }
@@ -401,7 +400,7 @@ public class StreamExercise {
         }
 
         @Override
-        public String toString(){
+        public String toString() {
           return this.name;
         }
     }

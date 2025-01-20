@@ -3,6 +3,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class DemoStream {
     public static void main(String[] args) {
@@ -89,12 +90,14 @@ public class DemoStream {
         System.out.println(newFruits); // [orange, apple, lemon]
 
         // distinct() -> remove duplicates
+        // What if List<Book> by distinct()
         List<String> newFruits2 =
             fruits.stream().distinct().collect(Collectors.toList());
         System.out.println(newFruits2); // [orange, apple, lemon]
 
-
-
+        Stream.of("abc","def");
+        Stream<Book>  books2 = Stream.of(new Book("abc"),new Book("def"));
+        books2.filter(e -> e.getName().contains("a")).collect(Collectors.toList());
     }
 
     public static class Book {
