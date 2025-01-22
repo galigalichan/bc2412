@@ -1,9 +1,13 @@
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import javax.management.RuntimeErrorException;
 
 public class DemoStream {
     public static void main(String[] args) {
@@ -95,9 +99,97 @@ public class DemoStream {
             fruits.stream().distinct().collect(Collectors.toList());
         System.out.println(newFruits2); // [orange, apple, lemon]
 
+        // Stream.class
         Stream.of("abc","def");
         Stream<Book>  books2 = Stream.of(new Book("abc"),new Book("def"));
-        books2.filter(e -> e.getName().contains("a")).collect(Collectors.toList());
+        List<Book> books3 = books2.filter(e -> e.getName().contains("a")).collect(Collectors.toList());
+
+        LocalDate date1 = LocalDate.of(2024, 10, 31);
+        String str = String.valueOf("123");
+
+        Stream<String> ss = Stream.empty();
+        System.out.println(ss.count()); // 0
+
+        Optional<Book> targetBookBox = Stream.of(new Book("abc"),new Book("def")).filter(e -> "abc".equals(e.getName())).findFirst(); // Find the first one
+        
+        // Optional (Java 8)
+        // 1. targetBook never be null
+        // 2. targetBook is an optional onject, so it can call Optional method only
+        // 3. You have to check the content of Optional Object before using it.
+        // 4. isPresent() & ifPresent() are the ways to resolve Optional in safe mode.
+        // 5. Never to resolve the Optional object by get() only. (unsafe)
+
+        int x = 10;
+        if (targetBookBox.isPresent()) { // something like peek()
+            Book targetBook = targetBookBox.get();
+            System.out.println(targetBook.getName()); // abc
+            System.out.println(x); // 10
+        }
+        
+        // similar to for-each
+        targetBookBox.ifPresent(e -> {
+            System.out.println(e.getName()); // abc
+            System.out.println(x); // 10
+            // x = 100;
+        });
+
+        // stream (for-each)
+        String name = "oscar";
+        Stream.of(100, 120, 300).forEach(e -> {
+            System.out.println(e);
+            System.out.println(name); // read the name -> OK
+            // but cannot write the name variable (cannot alter the variable outside the loop)
+            // name = "abc";
+        });
+
+        String name2 = "ok";
+        for (Integer integer : Stream.of(100, 120, 300).collect(Collectors.toList())) {
+            System.out.println(integer);
+            name2 = "ijk";
+        }
+
+        // Some other ways to resolve the Optional (Safe)
+        Book targetBook2 = targetBookBox.orElse(new Book("default"));
+
+        Book targetBook3 = targetBookBox.orElseThrow(() -> new RuntimeException("Book is not found.")); // preferred
+
+        Book targetBook4 = targetBookBox.orElseGet(() -> new Book("default")); // similar to orElse
+
+        // of(), ofNullable()
+        String name3 = "ABC"; // only when you are sure the variable is not null
+        Optional<String> os1 = Optional.of(name3); // java.lang.NullPointerException
+
+        String name4 = null;
+        Optional<String> os2 = Optional.ofNullable(name4);
+
+        Optional<String> os3 = Optional.empty();
+        if (os3.isPresent()) {
+            System.out.println(os3.get());
+        } else {
+            System.out.println("The String is null.");
+        }
+
+        // 1. Stream intermediate operation won;t execute itself, until terminal operation
+        // 2. Once the terminal operation executed, the stream object can no longer be used 
+        Stream<Integer> integersLargerThan10 = Stream.of(10, 100, -1).filter(e -> e >10);
+        System.out.println(integersLargerThan10.count()); // 1
+
+        // integersLargerThan10.collect(Collectors.toList());
+        // Runtime Exception: stream has already been operated or closed
+
+        // Intermediate operation: filter, map, distinct, etc.
+        // Terminal operation: collect(), count(), max(), min()
+
+        Stream<Integer> plusOne = Stream.of(1, 2, 3).map(i -> {
+            System.out.println(i);
+            return i + 1;
+        });
+        // List<Integer> plusOneList = plusOne.collect(Collectors.toList()); // 2, 3, 4
+
+        long count = plusOne.count();
+        // Because Java thinks map() doesn't change the result of count()
+        // so it won't execute map() when the terminal operation is count().
+        System.out.println(count); // 3
     }
 
     public static class Book {
