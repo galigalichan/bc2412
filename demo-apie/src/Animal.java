@@ -90,7 +90,7 @@ public class Animal implements Eatable { // complier ensures there's eat() metho
         Sleepable[] animals2 = new Sleepable[2];
         animals2[0] = new Cat("Steve",2);
         animals2[1] = new Dog("Owen");
-        // animals2[2] = new Animal(); // Animal didn't implement Eatable
+        // animals2[2] = new Animal(); // Animal didn't implement Sleepable
         animals2[1].sleep(); // Dog is sleeping...
         animals2[0].sleep(); // Cat is sleeping...
         // animals2[0].eat();
@@ -103,7 +103,7 @@ public class Animal implements Eatable { // complier ensures there's eat() metho
         // Hero hero = new Archer();
         // hero.attack();
         // hero = new Warrior();
-        // hero.attach();
+        // hero.attack();
 
         // Hero[] heros = new Hero[3];
 

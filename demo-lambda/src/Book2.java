@@ -1,4 +1,4 @@
-public record Book(String name, double price) { // record does not support extends, implements
+public record Book2(String name, double price) { // record does not support extends, implements
     // private String author;
     public static final double PI = 3.14;
 
@@ -11,11 +11,11 @@ public record Book(String name, double price) { // record does not support exten
     }
 
     public static void main(String[] args) {
-        Book b1 = new Book("ABC", 10.5);
+        Book2 b1 = new Book2("ABC", 10.5);
         System.out.println(b1.name()); // ABC
         System.out.println(b1.price()); // 10.5
-        System.out.println(new Book("ABC", 10.5).equals(b1)); // true
-        System.out.println(new Book("ABC", 10.5).hashCode()); // 1078168574
+        System.out.println(new Book2("ABC", 10.5).equals(b1)); // true
+        System.out.println(new Book2("ABC", 10.5).hashCode()); // 1078168574
         System.out.println(b1.hashCode()); // 1078168574
         System.out.println(b1); // Book[name=abc, price=10.5]
         b1.print();

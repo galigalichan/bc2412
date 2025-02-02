@@ -20,35 +20,39 @@ public class DemoArrayList {
       // System.out.println(strings.get(2)); // java.lang.IndexOutOfBoundsException
   
       // Book[]
-      ArrayList<Book> books = new ArrayList<>();
-      books.add(new Book("ABC"));
-      books.add(new Book("IJK"));
+      ArrayList<Book1> books = new ArrayList<>();
+      books.add(new Book1("ABC"));
+      books.add(new Book1("IJK"));
       books.remove(0); // remove book by index
       System.out.println(books.size()); // 1
-      books.add(new Book("XYZ"));
-      books.remove(new Book("IJK")); // after @Override equals() in Book.class
+      books.add(new Book1("XYZ"));
+      books.remove(new Book1("IJK")); // after @Override equals() in Book.class
       // ArrayList.remove(Object obj) -> Book.equals()
       // Generics Design ensure the Type must contains eqauls()
       System.out.println(books.size()); // 1
   
       // Requires @Override equals()
-      System.out.println(books.contains(new Book("XYZ"))); // true
-      System.out.println(books.indexOf(new Book("XYZ"))); // 0
+      System.out.println(books.contains(new Book1("XYZ"))); // true
+      System.out.println(books.indexOf(new Book1("XYZ"))); // 0
       books.clear(); // Create a new array with size 0
-      System.out.println(books.add(new Book("ABCD"))); // true
+      System.out.println(books.add(new Book1("ABCD"))); // true (successfully added)
       System.out.println(books.isEmpty()); // false
-  
+
+      // Convert ArrayList to String
+      String[] booksArray = books.toArray(new String[0]);
+      System.out.println(booksArray); 
+      
       // Search part of the title for book - For loop
       // for-each support ArrayList
       // boolean found = false;
       String bookName = "Not Found.";
-      for (Book book : books) {
+      for (Book1 book : books) {
         if (book.getName().contains("BC")) {
           // found = true;
           bookName = book.getName();
           break;
         }
       }
-      System.out.println("Book " + bookName + " is available.");
+      System.out.println("Book " + bookName + " is available."); // Book ABCD is available.
     }
   }

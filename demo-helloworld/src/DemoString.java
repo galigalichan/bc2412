@@ -84,6 +84,9 @@ public class DemoString {
         System.out.println(s5.substring(1)); // bc
 
 
+        String[] details = {"7868190130M7522","5303914400F9211","9273338290F4010"};
+        System.out.println(Integer.parseInt(details[0].substring(11, 13))); // 75
+
         }
     }
     

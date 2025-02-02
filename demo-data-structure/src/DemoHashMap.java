@@ -60,6 +60,8 @@ public class DemoHashMap {
         fruitMap.put("APPLE",3);
         System.out.println(fruitMap); // {Apple=3, APPLE=3}
         System.out.println(fruitMap.size()); // 2, entry count
+        // fruitMap.remove("Apple"); 
+        // System.out.println(fruitMap); // {APPLE=3}
 
         // According to String.class equals(), "Apple" and "APPLE" are not equals.
 
@@ -82,7 +84,7 @@ public class DemoHashMap {
         // get value by key
         System.out.println(fruitMap.get("APPLE")); // 3
         System.out.println(fruitMap.get("Apple")); // 3
-
+        
         //contains()
         System.out.println(fruitMap.containsKey("APPLE")); // true
 

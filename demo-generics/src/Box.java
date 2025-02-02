@@ -1,13 +1,13 @@
 import java.math.BigDecimal;
 // The T in "Class, instance varaible, instance method" are with same definition
 // But the T in static method is completely different thing, so we need to redefine
-public class Box<T extends Shape> { // locked itself into Shape so that it can flourish upon Shape
+public class Box<T extends Shape1> { // locked itself into Shape so that it can flourish upon Shape
     private T[] shapes;  // instance variables and methods refer to the above class
 
     public Box() {
         // this.shapes = new T[2]; // cannot be unclear (T) when calling memory
         // this.shapes = new Shape[2]; // may put a child into the parent 
-        this.shapes = (T[]) new Shape[2];
+        this.shapes = (T[]) new Shape1[2];
     }
 
     // The T in instance method refers to the definition T of class
@@ -18,7 +18,7 @@ public class Box<T extends Shape> { // locked itself into Shape so that it can f
     public double totalArea() { // shapes[0].area()
         // this.shapes[0].area();
         BigDecimal total = BigDecimal.valueOf(0.0);
-        for (Shape shape : this.shapes) {
+        for (Shape1 shape : this.shapes) {
             total = BigDecimal.valueOf(shape.area()).add(total);
         }
         return total.doubleValue();
@@ -26,7 +26,7 @@ public class Box<T extends Shape> { // locked itself into Shape so that it can f
 
     // The T in static method is not referring the T in Class
     // We can also use any other letter besides T
-    public static <T extends Shape> double totalArea2(T[] shapes) { // unrelated to the class Box
+    public static <T extends Shape1> double totalArea2(T[] shapes) { // unrelated to the class Box
         return 0.1;
     }
     
@@ -39,9 +39,9 @@ public class Box<T extends Shape> { // locked itself into Shape so that it can f
         // add Circle to shape[0]
         // add Square to shape[1]
 
-        Box<Shape> b2 = new Box<>();
+        Box<Shape1> b2 = new Box<>();
         b2.addShape(0, new Circle(3));
-        b2.addShape(1, new Square(3));
+        b2.addShape(1, new Square1(3));
         System.out.println(b2.totalArea()); // 37.27
 
         // Team<Hero>

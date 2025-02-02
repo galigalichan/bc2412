@@ -18,7 +18,7 @@ public class DemoSorting {
         // In Java, array & all custom types always pass by reference.
         // Primitive, wrapper class & Strings always pass by value (a copy of value)
 
-        Book book = new Book("Sun");
+        Book2 book = new Book2("Sun");
         changeBookName(book); // pass by Book reference
         System.out.println(book); // Book[name= hello] // dangerous: people can sneak in and alter everything with the revealed object reference
 
@@ -62,7 +62,7 @@ public class DemoSorting {
         // return arr;
     }
 
-    public static void changeBookName(Book book) {
+    public static void changeBookName(Book2 book) {
         book.setName("hello"); // pass by reference, but you provide a way for others to alter it
     }
 

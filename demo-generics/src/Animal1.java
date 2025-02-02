@@ -1,7 +1,7 @@
-public abstract class Animal {
+public abstract class Animal1 {
     private String name;
 
-    public Animal(String name) {
+    public Animal1(String name) {
         this.name = name;
     }
 

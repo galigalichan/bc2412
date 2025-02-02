@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class Library {
     // A library has many books
     // A Book has attributes: title & author

@@ -1,15 +1,11 @@
 import java.math.BigDecimal;
 
-public class Square extends Shape {
+public class Square1 extends Shape1 {
     private double side;
 
 
-    public Square(Color color, double side) {
+    public Square1(double side) {
         this.side = side;
-    }
-
-    public Square(Color color, double side2) {
-        //TODO Auto-generated constructor stub
     }
 
     public double getSide() {

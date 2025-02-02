@@ -59,7 +59,7 @@ public class LoginManager {
     // Regular Expression
     public void validateUsername2() {
         if (this.username == null || this.username.isEmpty()) {
-        throw new BusinessRuntimeException.of(SysError.INVALID_USERNAME);
+        throw BusinessRuntimeException.of(SysError.INVALID_USERNAME);
       }
       }
 
@@ -68,7 +68,7 @@ public class LoginManager {
           || (!this.password.contains("@") && !this.password.contains("!")
               && !this.password.contains("$") && !this.password.contains("&")
               && !this.password.contains("_"))) {
-        throw new BusinessRuntimeException.of(SysError.INVALID_PASSWORD);
+        throw BusinessRuntimeException.of(SysError.INVALID_PASSWORD);
       }
       }
 

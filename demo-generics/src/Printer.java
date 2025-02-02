@@ -10,7 +10,7 @@ public class Printer {
         return "this is " + this.x;
     }
 
-    public static <T extends Shape> double totalArea2(T[] shapes) { // unrelated to the class
+    public static <T extends Shape1> double totalArea2(T[] shapes) { // unrelated to the class
         return 0.1;
     }
 
@@ -26,7 +26,7 @@ public class Printer {
         System.out.println(longPrinter.print()); // this is 10
         // You defined T as Long.
 
-        GeneralPrinter<Book> bookPrinter = new GeneralPrinter<>(new Book("ABC"));
+        GeneralPrinter<Book2> bookPrinter = new GeneralPrinter<>(new Book2("ABC"));
         System.out.println(bookPrinter.print()); // this is Book[name= ABC]
 
     }

@@ -129,22 +129,10 @@ public class ArrayListExercise {
       set2.add(50);
       set2.add(60);
 
-      ArrayList<Integer> set11 = new ArrayList<>();
-      set11.addAll(set1);
+      HashSet<Integer> intersection = new HashSet<>(set1);
+      intersection.retainAll(set2);
 
-      ArrayList<Integer> set22 = new ArrayList<>();
-      set22.addAll(set2);
-
-      HashSet<Integer> set3 = new HashSet<>();
-
-      for (int i = 0; i < set11.size(); i++) {
-        for (int j = 0; j < set22.size(); j++)
-        if (set11.toArray()[i] == set22.toArray()[j]) {
-          set3.add((Integer) set11.toArray()[i]);
-        }
-      }
-
-      System.out.println(set3); // [40, 30]
+      System.out.println(intersection); // [40, 30]
 
       // Exercise 7: Convert HashSet to ArrayList
   
@@ -187,7 +175,7 @@ public class ArrayListExercise {
       students.add(new Student(2,"Bob"));
       students.add(new Student(3,"Charlie"));
       System.out.println(students.toString());
-      students.remove(new Student(2, "Bob"));
+      students.remove("Bob");
 
       int targetId = 1;
       String studentName = "Student Not Found";

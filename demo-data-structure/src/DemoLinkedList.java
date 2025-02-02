@@ -43,10 +43,10 @@ public class DemoLinkedList {
         LinkedList<Integer> ss2 = (LinkedList<Integer>) ss; // Holding a parent in a child is risky.
         ss2.remove();
 
-        List<Animal> animals = new ArrayList<>();
+        List<Animal1> animals = new ArrayList<>();
         animals.add(new Tiger("Peter"));
         animals.add(new Panda());
-        for (Animal animal : animals) {
+        for (Animal1 animal : animals) {
             System.out.println(animal.run());
         }
       

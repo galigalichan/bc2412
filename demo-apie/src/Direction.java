@@ -28,5 +28,6 @@ public enum Direction {
 
     public static void main(String[] args) {
         System.out.println(Direction.EAST.getAngle()); // 90
+        System.out.println(Direction.NORTH.opposite()); // SOUTH
     }
 }

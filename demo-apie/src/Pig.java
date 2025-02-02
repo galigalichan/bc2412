@@ -67,7 +67,7 @@ public class Pig extends Animal {
         Pig pig2 = new Pig("IJK");
 
 
-        pig.sleep();
+        pig.sleep(); // Pig is sleeping.
         System.out.println(pig.getName()); // null
         System.out.println(pig2.getName()); // IJK
 
@@ -84,7 +84,7 @@ public class Pig extends Animal {
             System.out.println("Same!"); // after override, if they are having the same value of attributes, they should be same.
         }   else {
             System.out.println("Not same!"); // before override, because equal() implementation from Object.class
-        }
+        } // Same!
 
         System.out.println(myPig.hashCode()); // 65632
         System.out.println(checkPig.hashCode()); // 65632
@@ -94,10 +94,12 @@ public class Pig extends Animal {
         System.out.println(s.equals(s2)); // the author of String overrides so that both strings are considered equal as long as they have the same value.
         System.out.println(s.equals("hello")); // true
 
-        System.out.println("hello".toString()); // String.class override toString() method
+        System.out.println("hello".toString()); // hello // String.class override toString() method
         System.out.println(myPig); // Pig[age=3, name=ABC] // if not override it will return address Pig@XXX
 
         // toString()
         // hashCode()
+
+
     }
 }

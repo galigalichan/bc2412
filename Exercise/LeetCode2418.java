@@ -4,9 +4,10 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 public class LeetCode2418 {
-
-
-
+// 2418. Sort the People
+// You are given an array of strings names, and an array heights that consists of distinct positive integers. Both arrays are of length n.
+// For each index i, names[i] and heights[i] denote the name and height of the ith person.
+// Return names sorted in descending order by the people's heights.
     public static void main(String[] args) {
         String[] names = new String[] {"Mary","John","Emma"};
         int[] heights = new int[] {180,165,170};
