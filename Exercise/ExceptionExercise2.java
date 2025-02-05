@@ -1,4 +1,3 @@
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ExceptionExercise2 {
@@ -14,12 +13,13 @@ public class ExceptionExercise2 {
     
     Scanner scanner = new Scanner(System.in);
     System.out.print("Enter the index to retrieve: ");
+    String input = scanner.nextLine(); // read String
+    scanner.close();
 
     // code here ...
     try {
-        int index = Integer.parseInt(scanner.nextLine()); // read String
+        int index = Integer.parseInt(input);
         System.out.println("Element at index " + index + ": " + numbers[index]);
-        scanner.close();
       }
         catch (NumberFormatException e) {
         System.out.println("Error: Please enter a valid number.");

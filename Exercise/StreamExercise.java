@@ -1,12 +1,16 @@
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Deque;
+import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
+import java.util.function.BinaryOperator;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class StreamExercise {
@@ -36,15 +40,26 @@ public class StreamExercise {
     List<Integer> numbers2 = Arrays.asList(10, 20, 5, 30, 15);
     // Output: Max: 30
     // Output: Min: 5
-    Optional<Integer> box = numbers2.stream().max((e1, e2) -> e1 < e2 ? -1 : 1);
-    int maxNum = Integer.MIN_VALUE;
-    if (box.isPresent()) {
-        maxNum = box.get();
-    }
-    System.out.println(maxNum); // 30
-    // Optional[30]
-    int minNum = numbers2.stream().min((e1, e2) -> e1 < e2 ? -1 : 1).orElse(-1); // orElse() to open the "box"
-    System.out.println(minNum); // 5
+    Integer max3 = numbers2.stream() //
+        .max((e1, e2) -> e1 > e2 ? 1 : -1) //
+        .orElse(null);
+    System.out.println("Max: " + max3);
+    // Output: Min: 5
+    Integer min3 = numbers2.stream() //
+        .min((e1, e2) -> e1 < e2 ? -1 : 1) //
+        .orElse(null);
+    System.out.println("Min: " + min3);
+
+    // Optional<Integer> box = numbers2.stream().max((e1, e2) -> e1 < e2 ? -1 : 1);
+    // int maxNum = Integer.MIN_VALUE;
+    // if (box.isPresent()) {
+    //     maxNum = box.get();
+    // }
+    // System.out.println(maxNum); // 30
+    // // Optional[30]
+    // int minNum = numbers2.stream().min((e1, e2) -> e1 < e2 ? -1 : 1).orElse(-1); // orElse() to open the "box"
+    // System.out.println(minNum); // 5
+    
     // 4. Mapping to a List of Lengths
     // Task: Given a list of strings, map each string to its length and collect the lengths into a
     // List<Integer>
@@ -119,14 +134,21 @@ public class StreamExercise {
     // new Person("Alice", 30),
     // new Person("Bob", 25),
     // new Person("Charlie", 30)
-    List<Person> persons = new ArrayList<>();
-    persons.add(new Person("Alice", 30));
-    persons.add(new Person("Bob", 25));
-    persons.add(new Person("Charlie", 30));
+    List<Person> persons9 = new ArrayList<>();
+    persons9.add(new Person("Alice", 30));
+    persons9.add(new Person("Bob", 25));
+    persons9.add(new Person("Charlie", 30));
 
     // // Output: {30=[Alice, Charlie], 25=[Bob]} (Map)
-    Map<Integer, List<Person>> newPersons = persons.stream().collect(Collectors.groupingBy(e -> e.getAge()));
-    System.out.println(newPersons); // {25=[Bob], 30=[Alice, Charlie]}
+    Map<Integer, List<String>> groupedByAge = persons9.stream() //
+        .collect(Collectors.groupingBy(e -> e.getAge(),
+        Collectors.mapping(e -> e.getName(), Collectors.toList()) //
+        ));
+
+    System.out.println(groupedByAge);
+
+    // Map<Integer, List<Person>> newPersons = persons.stream().collect(Collectors.groupingBy(e -> e.getAge()));
+    // System.out.println(newPersons); // {25=[Bob], 30=[Alice, Charlie]}
 
     // 10. Partitioning and Collecting to a Map (Partition by Gender)
     // Task: Given a list of Staff with their names and genders, partition them into two groups: male
@@ -136,14 +158,20 @@ public class StreamExercise {
     // new Staff("Alice", Gender.Female)
     // new Staff("Bob", Gender.Male)
     // new Staff("Charlie", Gender.Male)
-    List<Staff> staffMembers = new ArrayList<>();
-    staffMembers.add(new Staff("Alice", Gender.Female));
-    staffMembers.add(new Staff("Bob", Gender.Male));
-    staffMembers.add(new Staff("Charlie", Gender.Male));
+    List<Staff> staff10 = new ArrayList<>();
+    staff10.add(new Staff("Alice", Staff.Gender.FEMALE));
+    staff10.add(new Staff("Bob", Staff.Gender.MALE));
+    staff10.add(new Staff("Charlie", Staff.Gender.MALE));
+
+    Map<Boolean, List<String>> results10 = staff10.stream() //
+        .collect(Collectors.partitioningBy( //
+        staff -> staff.getGender() == Staff.Gender.MALE,
+        Collectors.mapping(e -> e.getName(), Collectors.toList())));
+    System.out.println(results10);
 
     // // Output: {false=[Alice], true=[Bob, Charlie]} (Map)
-    Map<Boolean, List<Staff>> newStaffMembers = staffMembers.stream().collect(Collectors.partitioningBy(e -> e.getGender() == Gender.Male));
-    System.out.println(newStaffMembers); // {false=[Alice], true=[Bob, Charlie]}
+    // Map<Boolean, List<Staff>> newStaffMembers = staff10.stream().collect(Collectors.partitioningBy(e -> e.getGender() == Gender.Male));
+    // System.out.println(newStaffMembers); // {false=[Alice], true=[Bob, Charlie]}
 
     // 11. Filtering, Mapping, and Collecting to a List
     // Task: Given a list of integers, filter out numbers less than 10, multiply the remaining numbers
@@ -161,9 +189,14 @@ public class StreamExercise {
     // List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
     // int defaultAge = 30;
     // Output: [Person(name=Alice, age=30), Person(name=Bob, age=30), Person(name=Charlie, age=30)]
-    List<String> names2 = Arrays.asList("Alice", "Bob", "Charlie");
-    List<Person1> newNames2 = names2.stream().map(Person1::new).collect(Collectors.toList());
-    System.out.println(newNames2); //[Person(name=Alice, age=30), Person(name=Bob, age=30), Person(name=Charlie, age=30)]
+    List<String> names12 = Arrays.asList("Alice", "Bob", "Charlie");
+    int defaultAge = 30;
+    List<Person> results12 = names12.stream() //
+        .map(name -> new Person(name, defaultAge)).collect(Collectors.toList());
+    System.out.println(results12);
+
+    // List<Person1> newNames2 = names2.stream().map(Person1::new).collect(Collectors.toList());
+    // System.out.println(newNames2); //[Person(name=Alice, age=30), Person(name=Bob, age=30), Person(name=Charlie, age=30)]
 
     // 13. Mapping and Collecting to a Deque
     // Task: Given a list of words, map each word to its uppercase form and collect the result into a
@@ -172,7 +205,7 @@ public class StreamExercise {
     // List<String> words = Arrays.asList("hello", "world", "java");
     // Output: [HELLO, WORLD, JAVA] (Deque)
     List<String> words3 = Arrays.asList("hello", "world", "java");
-    Deque<String> newWords3 = words3.stream().map(String::toUpperCase).collect(Collectors.toCollection(LinkedList::new));
+    Deque<String> newWords3 = words3.stream().map(String::toUpperCase).collect(Collectors.toCollection(ArrayDeque::new));
     System.out.println(newWords3); // [HELLO, WORLD, JAVA]
 
     // 14. Transforming and Collecting to an Array
@@ -210,18 +243,37 @@ public class StreamExercise {
     List<Worker> workers = Arrays.asList(new Worker("Alice", "HR"), new Worker("Bob", "IT"), new Worker("Charlie", "HR"), new Worker("David", "IT"));
 
     // Output: {HR=[Alice, Charlie], IT=[Bob, David]}
-    Map<String, List<Worker>> newWorkers = workers.stream().collect(Collectors.groupingBy(e -> e.getDept()));
-    System.out.println(newWorkers); // {HR=[Alice, Charlie], IT=[Bob, David]}
+    Map<String, List<String>> results16 = workers.stream() //
+        .collect(Collectors.groupingBy(e -> e.getDepartment(),
+        Collectors.mapping(e -> e.getName(), Collectors.toList()) // We want the names only.
+        ));
+    System.out.println(results16);
+
+    // Map<String, List<Worker>> newWorkers = workers.stream().collect(Collectors.groupingBy(e -> e.getDept()));
+    // System.out.println(newWorkers); // {HR=[Alice, Charlie], IT=[Bob, David]}
 
     // 17. Parallel Streams
-    // Task: Given a list of numbers, use a parallel stream to calculate the sum of all elements.
+    // ! stream():
+    // Best suited for simple or small datasets where you don’t need parallel
+    // processing and where maintaining the order of operations is important.
+    // ! parallelStream():
+    // Ideal for larger datasets or complex operations where the benefits of
+    // parallel processing can be fully realized
+    // Task: Given a list of numbers, use a parallel stream to calculate the sum
+    // of all elements.
     List<Integer> numbers6 = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
     // Output: 55
     Integer sumOfNumbers6 = numbers6.parallelStream().reduce(0, Integer::sum); // reduce(o, (a, b) -> (a + b))
     System.out.println(sumOfNumbers6); // 55
 
-    // 18. FlatMap
+    // ! parallelStream() is similar to stream(), return Stream<Integer>
+    // int sum = numbers5.parallelStream() //
+    //     .mapToInt(e -> e.intValue()) //
+    //     .sum();
+    // System.out.println(sum);
+
+    // 18. FlatMap: flatten multiple maps into one map
     // Task: Given a list of lists of numbers, flatten them into a single list and filter only the
     // numbers greater than 5.
 
@@ -267,6 +319,10 @@ public class StreamExercise {
     String newLanguages = String.join(", ", languages);
     System.out.println(newLanguages); // Java, Python, Rust, R, Go
 
+    String results21 = languages.stream() //
+    .collect(Collectors.joining(", "));
+    System.out.println(results21);
+
     // 22. Find First and Any
     // Task: Given a list of integers, find the first number that is divisible by 3.
     List<Integer> ages = Arrays.asList(4, 7, 9, 12, 16, 21);
@@ -291,7 +347,7 @@ public class StreamExercise {
     // Intermediate output: 2, 4, 6, 8
     // Final Output: [2, 4, 6, 8]
     List<Integer> newAmounts = amounts.stream().map(e -> e * 2)
-        .peek(e -> System.out.print(e + ", "))
+        .peek(e -> System.out.print(e + ", ")) // ! Log intermediate values
         .collect(Collectors.toList());
     System.out.println(newAmounts); // 2, 4, 6, 8, [2, 4, 6, 8]
 
@@ -314,8 +370,23 @@ public class StreamExercise {
     
     List<Integer> duplicates = Arrays.asList(2, 1, 2, 3, 4, 3, 5, 5, 6);
     // Output: [1, 2, 3, 4, 5, 6] (Set)
-    Set<Integer> newDuplicates = duplicates.stream().collect(Collectors.toSet());
-    System.out.println(newDuplicates); // [1, 2, 3, 4, 5, 6]
+    BinaryOperator<LinkedHashSet<Integer>> combiner = (left, right) -> {
+        left.addAll(right);
+        return left;
+        };
+
+    Collector<Integer, ?, LinkedHashSet<Integer>> customCollector =
+        Collector.of(() -> new LinkedHashSet<>(), //
+        (set, value) -> set.add(value), //
+        combiner, //
+        Collector.Characteristics.UNORDERED);
+
+    // Using the custom collector
+    Set<Integer> uniqueNumbers = duplicates.stream().collect(customCollector);
+    System.out.println(uniqueNumbers);
+
+    // Set<Integer> newDuplicates = duplicates.stream().collect(Collectors.toSet());
+    // System.out.println(newDuplicates); // [1, 2, 3, 4, 5, 6]
 
     // 27. String Length Calculation
     // Task: Given a list of strings, calculate the total number of characters in all the strings
@@ -324,8 +395,13 @@ public class StreamExercise {
     List<String> keywords = Arrays.asList("stream", "filter", "map", "sorted", "collect");
     //aggregate functions: count(), max(), min(), average(), sum()
     // Output: 28
-    int keywordsCount = keywords.stream().map(e -> e.length()).reduce(0, Integer::sum);
-    System.out.println(keywordsCount); // 28
+    int totalLength = keywords.stream() //
+        .mapToInt(e -> e.length()) // ! return IntStream so that we can use aggregate functions like sum(), max(), min(), avg(), etc.
+        .sum();
+    System.out.println(totalLength); // 28
+
+    // int keywordsCount = keywords.stream().map(e -> e.length()).reduce(0, Integer::sum);
+    // System.out.println(keywordsCount); // 28
   }
 
   public static class Employee {
@@ -428,11 +504,13 @@ public class StreamExercise {
             return this.name;
         }
 
+        public static enum Gender {
+            MALE, FEMALE,;
+        }
+
     }
 
-    public enum Gender {
-        Male, Female,;
-    }
+
 
     public static class Person1 {
         private String name;
@@ -487,7 +565,7 @@ public class StreamExercise {
             return this.name;
         }
 
-        public String getDept() {
+        public String getDepartment() {
             return this.dept;
         }
 

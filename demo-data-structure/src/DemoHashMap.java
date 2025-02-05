@@ -113,6 +113,7 @@ public class DemoHashMap {
         System.out.println(fruitMap.containsValue(1000)); // true
 
         System.out.println(fruitMap.isEmpty()); // false
+        System.out.println(fruitMap.get("Orange")); // null
         System.out.println(fruitMap.getOrDefault("Orange", 0)); // 0
         System.out.println(fruitMap.getOrDefault("Apple", 0)); // 5
 

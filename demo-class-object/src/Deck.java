@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.List;
 
 public class Deck {
     // 52 cards
@@ -9,11 +10,15 @@ public class Deck {
     public Deck() {
         this.cards = new Card[Card.SUITS.length * Card.RANKS.length]; // 13 * 4
         int idx = 0;
-        for (char rank : Card.RANKS) {
+        for (Rank rank : Card.RANKS) {
             for (char suite : Card.SUITS) {
                 this.cards[idx++] = new Card(rank, suite);
             }
         }
+    }
+
+    public List<Card> getCards() {
+        return Arrays.asList(this.cards);
     }
 
     public static void main(String[] args) {
@@ -21,11 +26,11 @@ public class Deck {
         
         System.out.println(Math.PI); // public & static
         // Math.PI: public static (no need to "new") final
-        Card card = new Card('A','S');
-        Card card2 = new Card('A','S');
+        Card card = new Card(Rank.ACE,'S');
+        Card card2 = new Card(Rank.ACE,'S');
 
-        if(card.equals(new Card('A','S'))) {
-
+        if(card.equals(new Card(Rank.ACE,'S'))) {
+        
         }
 
         // Card.x = 10;

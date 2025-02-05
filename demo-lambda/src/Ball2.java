@@ -1,7 +1,7 @@
-public class Ball {
+public class Ball2 {
     private int value;
 
-    public Ball addValue(int value){
+    public Ball2 addValue(int value){
         this.value += value;
         return this;
     }
@@ -11,7 +11,7 @@ public class Ball {
     }
 
     public static void main(String[] args) {
-        Ball ball = new Ball();
+        Ball2 ball = new Ball2();
         ball = ball.addValue(3);
         ball = ball.addValue(4);
 

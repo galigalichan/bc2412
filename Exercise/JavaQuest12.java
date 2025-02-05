@@ -24,9 +24,9 @@ public class JavaQuest12 {
     int[] answers = twoSum(dataset, 9); // {2, 7, 11, 15} is the dataset, 9 is the target to sum
     int[] answers2 = twoSum(new int[] { 3, 2, 4 }, 6); // {3, 2, 4} is the dataset, 6 is the target to sum
     int[] answers3 = twoSum(new int[] { 3, 3 }, 7); // {3, 3} is the dataset, 7 is the target to sum
-    System.out.println(Arrays.toString(answers));
-    System.out.println(Arrays.toString(answers2));
-    System.out.println(Arrays.toString(answers3));
+    System.out.println(Arrays.toString(answers)); // [0, 1]
+    System.out.println(Arrays.toString(answers2)); // [1, 2]
+    System.out.println(Arrays.toString(answers3)); // [-1, -1]
   }
 
   // Code a method here to return an array of two numbers that sum up to the
@@ -35,20 +35,13 @@ public class JavaQuest12 {
 
   
   public static int[] twoSum(int[] dataset, int target) {
-    int temp = 0;
     for (int i = 0; i < dataset.length; i++) {
-            temp = dataset[i] - target;
-
-
-            
+      for (int j = 0; j < dataset.length; j++)
+            if (dataset[i] + dataset[j] == target && i != j) {
+            return new int[] {i, j};
+            }
         }
-        
-      
-  
-    return new int[] {a, b};
-    
-
-
+        return new int[] {-1, -1};
   }
 
 }

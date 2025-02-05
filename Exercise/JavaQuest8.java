@@ -15,16 +15,30 @@ public class JavaQuest8 {
   
     // Your program should be able to handle all the above test case.
     // code here ...
+    int maxNum = Integer.MIN_VALUE;
+    int secondMax = nums[0];
+
+    for (int i = 0; i < nums.length; i++) {
+      if (nums[i] > maxNum) {
+        secondMax = maxNum;
+        maxNum = nums[i];
+      } else if (nums[i] > secondMax && nums[i] != maxNum) {
+        secondMax = nums[i];
+      }
+    }
+    System.out.println("Second Max = " + secondMax);
+  
+
       int temp;
-      for (int i = 0; i < nums.length -1; i++) {
-        for (int j = 0; j < nums.length -1; j++)
-        if (nums[j] > nums[j+1]) {
-                temp = nums[j];
-                nums[j] = nums[j+1];
-                nums[j+1] = temp;
-        }}
-        int secondMax = nums[nums.length-2];
-        System.out.println("Second Max = " + secondMax);
+      // for (int i = 0; i < nums.length -1; i++) {
+      //   for (int j = 0; j < nums.length -1; j++)
+      //   if (nums[j] > nums[j+1]) {
+      //           temp = nums[j];
+      //           nums[j] = nums[j+1];
+      //           nums[j+1] = temp;
+      //   }}
+      //   int secondMax = nums[nums.length-2];
+      //   System.out.println("Second Max = " + secondMax);
 
       for (int i = 0; i < nums2.length -1; i++) {
         for (int j = 0; j < nums2.length -1; j++)

@@ -18,7 +18,7 @@ public class DemoHashSet {
         strings.remove(new String("XYZ")); // OR strings.remove("XYZ");
         System.out.println(strings.size()); // 2
         System.out.println(strings); // [ABC, IJK]
-
+    
 
         // HashSet cannot be ordering naturally
         // because its underlying data structure is not an array.

@@ -24,18 +24,18 @@ public class ExceptionExercise4 {
     try {
         registerUser(username, password, email);
         System.out.println("User registration is successful: " + username);
-    
-    } catch (UserRegistrationException e) {
+        } catch (UserRegistrationException e) {
         System.out.println("User Registeration is Fail.");
-    } 
+        }
+
+  } 
 
 
   // Call validateUsername(), validatePassword() and validateEmail()
   // if anyone of the above throw exception, this method registerUser() should throw custom
   // exception UserRegistrationException.
   // otherwise, print "User registered successfully: jackywong", where jackywong is the username.
-  public static void registerUser(String username, String password,
-      String email) {
+  public static void registerUser(String username, String password, String email) {
         try {
           validateUsername(username); // if email checking fail, throw and exit this method
           validatePassword(password);

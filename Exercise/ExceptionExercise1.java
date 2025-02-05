@@ -19,10 +19,9 @@ public class ExceptionExercise1 {
       divide(numerator,denominator);
       System.out.println("Result: " + divide(numerator, denominator));
     } catch (ArithmeticException e) {
-        System.out.println("Error: Cannot divide by zero.");
-        System.out.println("Division operation completed.");
+      System.out.println("Error: Cannot divide by zero.");
     } finally {
-    System.out.println("Division operation completed.");
+      System.out.println("Division operation completed.");
     }
 
     scanner.close();

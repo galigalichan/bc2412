@@ -3,16 +3,16 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class Ball implements Comparable<Ball> {
+public class Ball1 implements Comparable<Ball1> {
     private Color color;
     private int value;
 
-    public Ball(Color color, int value) {
+    public Ball1(Color color, int value) {
         this.color = color;
         this.value = value;
     }
 
-    public Ball.Color getColor() {
+    public Color getColor() {
         return this.color;
     }
 
@@ -29,10 +29,10 @@ public class Ball implements Comparable<Ball> {
     }
 
     @Override
-    public int compareTo(Ball ball) { // You provide the sorting criteria for Collections.sort() method
+    public int compareTo(Ball1 ball) { // You provide the sorting criteria for Collections.sort() method
         // Compare two balls
         // this.ball (-1), ball (1)
-        // order by color:: RED, BLUE; YELLOW. For same color, descending order of value
+        // order by color: RED, BLUE; YELLOW. For same color, descending order of value
         if (this.color == ball.getColor()) {
             if (this.value > ball.getValue())
                 return -1;
@@ -69,12 +69,12 @@ public class Ball implements Comparable<Ball> {
         // BLUE 7
         // YELLOW 3
         // RED 8
-        List<Ball> balls = new ArrayList<>();
-        balls.add(new Ball(Ball.Color.RED, 1));
-        balls.add(new Ball(Ball.Color.YELLOW, 9));
-        balls.add(new Ball(Ball.Color.BLUE, 7));
-        balls.add(new Ball(Ball.Color.YELLOW, 3));
-        balls.add(new Ball(Ball.Color.RED, 8));
+        List<Ball1> balls = new ArrayList<>();
+        balls.add(new Ball1(Color.RED, 1));
+        balls.add(new Ball1(Color.YELLOW, 9));
+        balls.add(new Ball1(Color.BLUE, 7));
+        balls.add(new Ball1(Color.YELLOW, 3));
+        balls.add(new Ball1(Color.RED, 8));
 
         System.out.println(balls);
          // [Ball[color= RED,value=1], Ball[color= YELLOW,value=9], Ball[color= BLUE,value=7], Ball[color= YELLOW,value=3], Ball[color= RED,value=8]]
@@ -86,7 +86,7 @@ public class Ball implements Comparable<Ball> {
         // [Ball[color= RED,value=8], Ball[color= RED,value=1], Ball[color= BLUE,value=7], Ball[color= YELLOW,value=9], Ball[color= YELLOW,value=3]]
         
         // Approach 2: Comparator<Ball> (Better Design)
-        Comparator<Ball> sortFormula;
+        Comparator<Ball1> sortFormula;
         int x = 1;
         if (x > 2) {
             sortFormula = new SortByColor();

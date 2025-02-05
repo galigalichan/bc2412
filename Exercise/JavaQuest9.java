@@ -18,10 +18,11 @@ public class JavaQuest9 {
     public static void main(String[] args) {
     String str = "VenturenixLAB, Java";
   
+    // Use name.charAt()
     // prints J
     // prints e (the 1st e)
     // code here ...
-    System.out.println("J");
+    System.out.println(str.charAt(15));
     System.out.println(str.charAt(1));
 
     // Use indexOf()
